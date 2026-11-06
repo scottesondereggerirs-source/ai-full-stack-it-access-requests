@@ -1,0 +1,20 @@
+{
+  "export_version": "1.0",
+  "exported_at": "2026-10-22T16:00:00Z",
+  "source_channel": "email",
+  "subject": "Dashboard event checks (paraphrase)",
+  "message": "Hi, I'm Maya Chen in the Analytics department. I'm submitting request IT-001 on October 22, 2026. I'd like to get new read-only access to the Atlas system in the staging environment, starting October 23, 2026 and ending November 6, 2026. Priya Shah is my supervisor. I need to review the weekly conversion dashboard that uses the updated event definitions, prior to the next reporting cycle. The sample data has already been loaded into the system. I plan to verify the totals by comparing them against our team's spreadsheet and will report any differences I find to the dashboard owner.",
+  "expected_facts": {
+    "request_id": "IT-001",
+    "request_date": "2026-10-22",
+    "kind": "new",
+    "requester": "Maya Chen",
+    "team": "Analytics",
+    "system": "Atlas",
+    "environment": "staging",
+    "permission": "read",
+    "start_date": "2026-10-23",
+    "end_date": "2026-11-06",
+    "manager": "Priya Shah"
+  }
+}
