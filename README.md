@@ -4,6 +4,8 @@ A command-line application for Northstar Labs regional IT teams. It reads export
 
 The task brief is in `CHALLENGE.md`. Operating requirements are in `docs/requirements.md`. Open questions and the defaults chosen for them are in `docs/open-questions.md`.
 
+In class, start with `docs/00-prerequisites.md` and follow the files in `docs/` in order.
+
 ## Supported runtime and provider
 
 | Item | Supported configuration |
