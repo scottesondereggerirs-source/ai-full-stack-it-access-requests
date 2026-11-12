@@ -1,0 +1,21 @@
+Let's just pull down the README.md from the original location. They've changed the assignment quite a bit.
+
+---
+
+Let's just pull down the README.md from the original location. They've changed the assignment quite a bit.
+
+---
+
+Is everything else synched up pretty well with the orginal repository? Originally I was going to keep my work, but I guess I have to start over.
+
+---
+
+Is everything else synched up pretty well with the orginal repository? Originally I was going to keep my work, but I guess I have to start over.
+
+---
+
+Can you just throw the new files we created into a separate folder that won't be committed to github?
+
+---
+
+Can you just throw the new files we created into a separate folder that won't be committed to github?
