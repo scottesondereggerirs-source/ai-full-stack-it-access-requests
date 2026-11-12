@@ -4,3 +4,6 @@
 node_modules/
 .venv/
 __pycache__/
+
+# Local archive of the earlier implementation
+/local-previous-work/
