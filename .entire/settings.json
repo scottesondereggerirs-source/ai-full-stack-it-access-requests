@@ -1,4 +1,4 @@
-{
+{"redaction": {"pii": {"enabled": true, "email": true, "phone": true}},
   "enabled": true,
   "checkpoints": {
     "primary": {
