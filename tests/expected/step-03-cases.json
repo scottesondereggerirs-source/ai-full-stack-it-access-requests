@@ -1,0 +1,85 @@
+{
+  "format_version": 1,
+  "cases": [
+    {
+      "name": "changed-write",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-03/changed-write/IT-001.json",
+      "source_sha256": "dd0b730070b2875aec5ca29a16e0d3b728f0ac08851fbec135e171e2e5116adc",
+      "response_file": "changed-write.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "write",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "Security Review",
+      "next_action": "review-risk-then-owner",
+      "required_issue_codes": [],
+      "basis": "Committed plan T-22/T-26: explicit source or metadata transformation of IT-001; expected facts selected before application output."
+    },
+    {
+      "name": "metadata-only",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-03/metadata-only/IT-001.json",
+      "source_sha256": "96f84e3eca17513510ac3b2ae648daf178e08dff9f74292919a85781b2b33e7c",
+      "response_file": "metadata-only.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "System Owner",
+      "next_action": "review-request",
+      "required_issue_codes": [],
+      "basis": "Committed plan T-22/T-26: explicit source or metadata transformation of IT-001; expected facts selected before application output."
+    },
+    {
+      "name": "missing-request-date",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-03/missing-request-date/IT-001.json",
+      "source_sha256": "ea4435601d59411e2a5f7254576d313b0d23cc54984c6b2f515def20f8c41bd4",
+      "response_file": "missing-request-date.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": null,
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "System Owner",
+      "next_action": "review-request",
+      "required_issue_codes": [
+        "missing:request_date"
+      ],
+      "basis": "Committed plan T-22/T-26: explicit source or metadata transformation of IT-001; expected facts selected before application output."
+    }
+  ]
+}

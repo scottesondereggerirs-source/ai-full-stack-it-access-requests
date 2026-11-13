@@ -1,0 +1,8 @@
+{
+  "response_source": "mock",
+  "mock_error": {
+    "category": "provider_unavailable",
+    "message": "Mock service unavailable; retry the recorded source."
+  },
+  "note": "Saved failure stimulus for injected provider/store tests; no live model call."
+}
