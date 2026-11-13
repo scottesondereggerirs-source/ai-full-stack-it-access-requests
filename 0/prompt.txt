@@ -1,0 +1,173 @@
+We need to develop a new project for a training class assignment. The assignment is outlined in CHALLENGE.md and the requirements are listed in docs/requirements.md. This project will need to have solid test plans. We can generate test data as needed to handle edge cases and validate against hallucination or other issues.
+
+---
+
+We need to develop a new project for a training class assignment. The assignment is outlined in CHALLENGE.md and the requirements are listed in docs/requirements.md. This project will need to have solid test plans. We can generate test data as needed to handle edge cases and validate against hallucination or other issues.
+
+---
+
+Implement the plan.
+
+---
+
+Implement the plan.
+
+---
+
+Can you also check against the other *.md files in docs. I'm having trouble understanding the assignment vs. understanding the process.
+
+---
+
+Can you also check against the other *.md files in docs. I'm having trouble understanding the assignment vs. understanding the process.
+
+---
+
+I like the copy tip you gave me, but can't seem to get it to work. Can you just write your last response into codex_summary.md ?
+
+---
+
+I like the copy tip you gave me, but can't seem to get it to work. Can you just write your last response into codex_summary.md ?
+
+---
+
+Weird. Can you delete codex_summary.md and re-create it? I don't see anythiung.
+
+---
+
+Weird. Can you delete codex_summary.md and re-create it? I don't see anythiung.
+
+---
+
+I see the file. but I don't see anything in it when i open it. Perhaps I should have specified to format it as a markdown file
+
+---
+
+I see the file. but I don't see anything in it when i open it. Perhaps I should have specified to format it as a markdown file
+
+---
+
+ok -- don't worry about that one, it was a side-quest. Back to the main goal. In your review, did you already look at office-polidy.md?
+
+---
+
+ok -- don't worry about that one, it was a side-quest. Back to the main goal. In your review, did you already look at office-polidy.md?
+
+---
+
+ok -- so the next thing is probably to get answers to the open questions, right?
+
+---
+
+ok -- so the next thing is probably to get answers to the open questions, right?
+
+---
+
+So for the open questions, I was instructed that we are creating an MVP, so we should probably find a way to encapsulate or stub out those questions and make default decisions for the simplest possible solution.
+
+---
+
+So for the open questions, I was instructed that we are creating an MVP, so we should probably find a way to encapsulate or stub out those questions and make default decisions for the simplest possible solution.
+
+---
+
+Can you double-check the tests and ,json files (ignore the "local-previous-work" folder) against our MVP and validate whether our MVP makes sense?
+
+---
+
+Can you double-check the tests and ,json files (ignore the "local-previous-work" folder) against our MVP and validate whether our MVP makes sense?
+
+---
+
+Great. I believe you already commited the plan and spec, but if not, we probably should.
+
+---
+
+Great. I believe you already commited the plan and spec, but if not, we probably should.
+
+---
+
+Can you go ahead and commit the plan.md? I removed codex_summary.md. I think something i did manually screwed it up. It was for my convenience, not a requirement.
+
+---
+
+Can you go ahead and commit the plan.md? I removed codex_summary.md. I think something i did manually screwed it up. It was for my convenience, not a requirement.
+
+---
+
+Do the test cases include test cases that will cause errors/rejection? Edge cases, etc.? Can you validate coverage on the test plan and test cases?
+
+---
+
+Do the test cases include test cases that will cause errors/rejection? Edge cases, etc.? Can you validate coverage on the test plan and test cases?
+
+---
+
+can you commit the plan revisions for us now, please?
+
+---
+
+can you commit the plan revisions for us now, please?
+
+---
+
+ok. I think it's time to implement the plan and build this system. Can you use the 03-implement-and-validate.md as the guide for our build? Do you have any questions before we start?
+
+---
+
+ok. I think it's time to implement the plan and build this system. Can you use the 03-implement-and-validate.md as the guide for our build? Do you have any questions before we start?
+
+---
+
+Can you execute the git commands?
+
+---
+
+Can you execute the git commands?
+
+---
+
+Excellent. Commit the mock provider changes and go through the next step of implementation.
+
+---
+
+Excellent. Commit the mock provider changes and go through the next step of implementation.
+
+---
+
+Great -- can you go ahead and run those commits?
+
+---
+
+Great -- can you go ahead and run those commits?
+
+---
+
+Pelase commit the step 2 implementation and passing log.
+
+---
+
+Pelase commit the step 2 implementation and passing log.
+
+---
+
+ok -- is there anything lest that we need to implement or validate?
+
+---
+
+ok -- is there anything lest that we need to implement or validate?
+
+---
+
+Please proceed with step 3
+
+---
+
+Please proceed with step 3
+
+---
+
+Go ahead and commit
+
+---
+
+Go ahead and commit
