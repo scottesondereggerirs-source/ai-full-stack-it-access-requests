@@ -156,18 +156,27 @@ def _record(row: sqlite3.Row) -> dict[str, Any]:
 
 
 class StateStore:
-    def __init__(self, path: Path):
+    def __init__(self, path: Path, *, read_only: bool = False):
         self.path = Path(path).resolve()
+        self.read_only = read_only
         self._connection: sqlite3.Connection | None = None
         try:
-            self.path.parent.mkdir(parents=True, exist_ok=True)
-            connection = sqlite3.connect(self.path, timeout=5.0, isolation_level=None)
+            if read_only:
+                if not self.path.is_file():
+                    raise StateError("Intake database does not exist; run intake first.")
+                connection = sqlite3.connect(self.path.as_uri() + "?mode=ro", uri=True, timeout=5.0, isolation_level=None)
+            else:
+                self.path.parent.mkdir(parents=True, exist_ok=True)
+                connection = sqlite3.connect(self.path, timeout=5.0, isolation_level=None)
             self._connection = connection
             connection.row_factory = sqlite3.Row
             connection.execute("PRAGMA foreign_keys = ON")
             connection.execute("PRAGMA busy_timeout = 5000")
-            connection.execute("PRAGMA journal_mode = WAL")
-            connection.executescript(_SCHEMA)
+            if read_only:
+                connection.execute("PRAGMA query_only = ON")
+            else:
+                connection.execute("PRAGMA journal_mode = WAL")
+                connection.executescript(_SCHEMA)
         except (OSError, sqlite3.Error) as error:
             self.close()
             raise StateError("Cannot initialize the intake database; check its path, permissions and availability.") from error
@@ -191,6 +200,8 @@ class StateStore:
 
     @contextmanager
     def _write(self):
+        if self.read_only:
+            raise StateError("This database connection is read-only.")
         connection = self._db
         try:
             connection.execute("BEGIN IMMEDIATE")
@@ -202,6 +213,15 @@ class StateStore:
             if isinstance(error, sqlite3.Error):
                 raise StateError("Database transaction failed; check the database's availability and integrity.") from error
             raise
+
+    @contextmanager
+    def snapshot(self):
+        connection = self._db
+        connection.execute("BEGIN")
+        try:
+            yield self
+        finally:
+            connection.rollback()
 
     def _current_optional(self, document_id: str) -> dict[str, Any] | None:
         row = self._db.execute(
@@ -373,4 +393,44 @@ class StateStore:
                 job = self._enqueue(row["document_id"], bytes(row["source_bytes"]), prepared)
                 if job.attempt_id != row["current_attempt_id"]:
                     jobs.append(job)
+            return jobs
+
+    def configure_attempt(self, attempt_id: int, settings: dict[str, Any]) -> None:
+        """Record effective mock fixtures/operational settings before dispatch."""
+        prepared = _prepare_settings(settings)
+        with self._write():
+            attempt = self._require_current(attempt_id, "pending")
+            for field in _CACHE_FIELDS:
+                if field != "mock_fixture_hashes" and settings.get(field) != attempt["settings"].get(field):
+                    raise StateError("Generation or policy changes require refresh, not a retry configuration update.")
+            self._db.execute(
+                "UPDATE attempts SET settings_json = ?, settings_fingerprint = ?, policy_version = ? WHERE attempt_id = ?",
+                (*prepared, attempt_id),
+            )
+
+    def recover_running(self) -> None:
+        """Called only after acquiring the process lock: previous writers are gone."""
+        with self._write():
+            for current in self.queue():
+                if current["state"] != "running":
+                    continue
+                error = {
+                    "category": "interrupted_response",
+                    "message": "Previous processing stopped before this attempt was committed; resume unfinished work.",
+                    "retry_command": shlex.join(["it-access", "--db", str(self.path), "retry", current["document_id"]]),
+                }
+                self._db.execute(
+                    "UPDATE attempts SET state = 'interrupted', status = 'error', owner = 'IT Service Desk', "
+                    "next_action = 'retry-extraction', error_json = ?, finished_at = ? WHERE attempt_id = ?",
+                    (_json(error), _now(), current["attempt_id"]),
+                )
+
+    def resume_jobs(self) -> list[ScheduledAttempt]:
+        with self._write():
+            jobs = []
+            for current in self.queue():
+                if current["state"] == "pending":
+                    jobs.append(ScheduledAttempt(current["document_id"], current["revision_id"], current["attempt_id"], True))
+                elif current["state"] == "interrupted":
+                    jobs.append(self._new_attempt(current["document_id"], current["revision_id"], _prepare_settings(current["settings"])))
             return jobs

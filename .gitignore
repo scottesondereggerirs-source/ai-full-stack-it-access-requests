@@ -4,6 +4,8 @@
 node_modules/
 .venv/
 __pycache__/
+/state/
+*.egg-info/
 
 # Local archive of the earlier implementation
 /local-previous-work/

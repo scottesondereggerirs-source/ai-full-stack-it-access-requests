@@ -7,12 +7,18 @@ independent expected records. Response validation and routing are separate steps
 from dataclasses import dataclass
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
 
 class ProviderError(RuntimeError):
     """An actionable failure obtaining a response, before extraction validation."""
+
+    def __init__(self, message: str, category: str = "provider_unavailable", retry_after: float | None = None):
+        super().__init__(message)
+        self.category = category
+        self.retry_after = retry_after
 
 
 @dataclass(frozen=True)
@@ -51,7 +57,11 @@ class MockProvider:
 
     def __init__(self, fixture_directory: Path):
         self.fixture_directory = Path(fixture_directory).resolve()
-        manifest = _read_json(self.fixture_directory / "manifest.json")
+        try:
+            self._manifest_bytes = (self.fixture_directory / "manifest.json").read_bytes()
+            manifest = json.loads(self._manifest_bytes.decode("utf-8"))
+        except (OSError, UnicodeError, ValueError) as error:
+            raise ProviderError("Cannot load the mock manifest; supply a readable UTF-8 JSON manifest.") from error
         if (
             not isinstance(manifest, dict)
             or manifest.get("format_version") != 1
@@ -75,6 +85,22 @@ class MockProvider:
             if path.parent != self.fixture_directory:
                 raise ProviderError("Mock response_file must identify a file inside the fixture directory.")
             self._fixtures[key] = (entry["message_sha256"], path)
+        # Capture one immutable fixture snapshot for this processing command.
+        # Hash and decode these same bytes so provenance cannot describe a
+        # different file revision from the response actually returned.
+        self._responses: dict[Path, bytes | None] = {}
+        for _, path in self._fixtures.values():
+            if path not in self._responses:
+                try:
+                    self._responses[path] = path.read_bytes()
+                except OSError:
+                    self._responses[path] = None
+
+    def fixture_hashes(self) -> dict[str, str]:
+        result = {"manifest.json": hashlib.sha256(self._manifest_bytes).hexdigest()}
+        for path, raw in self._responses.items():
+            result[path.name] = hashlib.sha256(raw).hexdigest() if raw is not None else "unavailable"
+        return result
 
     def extract(
         self,
@@ -98,8 +124,29 @@ class MockProvider:
                 f"Message does not match the saved source for {document_id}; "
                 "use the original decoded message or provide a new source-specific fixture."
             )
-        # Read anew so callers cannot mutate the next call's fixture or payload.
-        payload = _read_json(path)
+        raw = self._responses[path]
+        if raw is None:
+            raise ProviderError(f"Cannot read mock response {path.name}; restore its saved reply before retrying.")
+        try:
+            # Decode anew so callers cannot mutate another call's response.
+            payload = json.loads(raw.decode("utf-8"))
+        except (UnicodeError, ValueError) as error:
+            raise ProviderError(f"Mock response {path.name} must be valid UTF-8 JSON.", "malformed_output") from error
         if not isinstance(payload, dict):
             raise ProviderError(f"Mock response {path.name} must contain a provider response object.")
+        if "mock_error" in payload:
+            failure = payload["mock_error"]
+            categories = {"timeout", "rate_limit", "provider_auth", "provider_unavailable", "malformed_output"}
+            if (
+                not isinstance(failure, dict)
+                or not isinstance(failure.get("category"), str)
+                or failure["category"] not in categories
+                or not isinstance(failure.get("message"), str)
+                or not failure["message"].strip()
+            ):
+                raise ProviderError("Saved mock error lacks a recognized category and message.", "malformed_output")
+            retry_after = failure.get("retry_after")
+            if not isinstance(retry_after, (int, float)) or not math.isfinite(retry_after) or retry_after < 0:
+                retry_after = None
+            raise ProviderError(failure["message"], failure["category"], retry_after)
         return ProviderResponse(payload=payload, response_source="mock")
