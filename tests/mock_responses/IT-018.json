@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-018",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-018",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-018\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Daniel Wright\", \"team\": \"Data Engineering\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I am reviewing our sample dataset we use during our weekly analyst workshop.\", \"start_date\": \"2026-10-27\", \"end_date\": \"2026-11-03\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Could you please record IT-018, submitted on 2026-10-22?\", \"I (Daniel Wright in Data Engineering) would like to request new read access to Atlas in staging for the dates 2026-10-27 through 2026-11-03.\", \"I am reviewing our sample dataset we use during our weekly analyst workshop. Last time, people noticed a discrepancy between the totals of the sample and what is in the handout.\", \"My manager is Priya Shah.\"], \"issues\": []}"
+        }
+      ]
+    }
+  ]
+}

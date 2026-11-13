@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-009",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-009",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-009\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Isla Morgan\", \"team\": \"Support\", \"system\": \"Beacon\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"to go through example support cases before updating our troubleshooting guide (we're missing a few steps new starters have been asking about)\", \"start_date\": \"2026-10-26\", \"end_date\": \"2026-10-29\", \"manager\": null, \"supporting_quotes\": [\"IT-009, submitted 2026-10-22.\", \"Can you please grant me new staging read access for Beacon?\", \"Isla Morgan, Support.\", \"I need access to it from 2026-10-26 - 2026-10-29 to go through example support cases before updating our troubleshooting guide (we're missing a few steps new starters have been asking about).\"], \"issues\": [\"missing:manager: No explicit resolved manager is provided.\"]}"
+        }
+      ]
+    }
+  ]
+}

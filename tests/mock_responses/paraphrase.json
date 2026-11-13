@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-101",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-101",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-101\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"verify the weekly conversion dashboard against the sample records before the next reporting cycle.\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Please log request IT-101, dated 2026-10-22.\", \"I need new access to Atlas, staging only, with read permission.\", \"I am Maya Chen in Analytics; Priya Shah is my manager.\", \"My purpose is to verify the weekly conversion dashboard against the sample records before the next reporting cycle.\", \"The access window is 2026-10-23 through 2026-11-06.\"], \"issues\": []}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-015",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-015",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-015\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Mia Davis\", \"team\": \"Learning\", \"system\": \"Beacon\", \"environment\": \"staging\", \"permission\": \"read\", \"business_purpose\": \"I need to make sure that the sample conversations in the examples I'm building match up to the exercise handout for the Support onboarding workshop.\", \"start_date\": \"2026-10-29\", \"end_date\": \"2026-10-31\", \"manager\": \"Elena Park\", \"supporting_quotes\": [\"IT-015 2026-10-22.\", \"Mia Davis - Learning: Please set new read access to Beacon in staging for the dates 2026-10-24 - 2026-10-26.\", \"I need to make sure that the sample conversations in the examples I'm building match up to the exercise handout for the Support onboarding workshop. (Correction: substitute the access dates in the above with 2026-10-29 - 2026-10-31.\", \"(Correction: substitute the access dates in the above with 2026-10-29 - 2026-10-31.\", \"My manager is Elena Park.\"], \"issues\": []}"
+        }
+      ]
+    }
+  ]
+}

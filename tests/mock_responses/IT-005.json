@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-005",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-005",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-005\", \"request_date\": \"2026-10-22\", \"kind\": \"withdrawal\", \"requester\": \"Ava Brooks\", \"team\": \"Design\", \"system\": null, \"environment\": null, \"permission\": null, \"business_purpose\": \"The project that triggered my request has been cancelled so now there is no work for me to do.\", \"start_date\": null, \"end_date\": null, \"manager\": \"Elena Park\", \"supporting_quotes\": [\"Could you please withdraw IT-005?\", \"Date: 2026-10-22\", \"My name is Ava Brooks.\", \"Design.\", \"The project that triggered my request has been cancelled so now there is no work for me to do.\", \"My boss is Elena Park.\"], \"issues\": [\"missing:system: No explicit resolved system is provided.\", \"missing:environment: No explicit resolved environment is provided.\", \"missing:permission: No explicit resolved permission is provided.\", \"missing:start_date: No explicit resolved start_date is provided.\", \"missing:end_date: No explicit resolved end_date is provided.\"]}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-002",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-002",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-002\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Owen Reed\", \"team\": \"Payments\", \"system\": \"Ledger\", \"environment\": \"production\", \"permission\": \"write\", \"business_purpose\": \"We have several settlement entries associated with the wrong reconciliation batch.\", \"start_date\": \"2026-10-24\", \"end_date\": \"2026-10-25\", \"manager\": \"Elena Park\", \"supporting_quotes\": [\"Request IT-002, 2026-10-22 - Owen Reed in Payments requesting new write access to Ledger in production.\", \"We have several settlement entries associated with the wrong reconciliation batch. Operations has prepared the replacement values.\", \"Needed during 2026-10-24 and 2026-10-25.\", \"My manager is Elena Park.\"], \"issues\": []}"
+        }
+      ]
+    }
+  ]
+}
