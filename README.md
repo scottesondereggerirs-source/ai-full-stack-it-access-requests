@@ -33,6 +33,20 @@ Intake reads top-level *.json files; document identity is the filename, distinct
 
 Mock replies are selected by filename, original byte SHA-256 and decoded-message hash from tests/mock_responses/manifest.json. An unfamiliar source without a saved reply fails explicitly; author a new fixture or use the live adapter. Source revisions and all earlier attempts remain in SQLite. Mock fixture files are captured once per processing command; a compact bundle digest binds their exact contents and manifest to each attempt.
 
+## Local web demo
+
+From the repository root, after installing the project:
+
+```bash
+it-access --db state/web.sqlite3 serve --port 8765
+```
+
+Open **http://127.0.0.1:8765** in your browser. Choose a JSON request and click **Run analysis** to see the original message and structured output side by side. Switch between message/raw JSON and extracted facts/JSON output. Expand supporting evidence and click a quote to highlight it in the source. Scenario shortcuts demonstrate complete requests, conflicting details and instruction overrides. Stop the server with Ctrl+C.
+
+Mock mode is the default: it uses saved provider replies without a model call. Optional **Live · OpenAI** uses the server's `API_KEY` and the same validated pipeline as the CLI; the key never goes to the browser. Errors show a retry button. Unchanged inputs and settings reuse saved results. The dedicated web database keeps demonstration attempts separate from the assignment's exported queue.
+
+Use `--input-dir path/to/exports` for a different directory (top-level JSON files). New messages need matching mock fixtures or live processing. `--model`, `--endpoint`, `--timeout` and `--mock-dir` configure the server; the browser chooses mock/live and processes one request at a time. The server binds to localhost for local use. It is not a hosted multiuser application. Read [web verification](planning/web-verification.md) for tests and browser checks.
+
 ## Live configuration
 
 The facilitator supplies `API_KEY` in the environment. Only live mode reads it; do not place it in a source file, database option or URL. No other environment variable is required. Model/provider settings are command options:

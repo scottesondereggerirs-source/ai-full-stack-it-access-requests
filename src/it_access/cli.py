@@ -17,7 +17,7 @@ def _parser():
     parser = argparse.ArgumentParser(prog="it-access", description="Prepare Northstar access requests for human review.")
     parser.add_argument("--db", type=Path, default=Path("state/intake.sqlite3"))
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name in ("intake", "queue", "show", "resume", "retry", "refresh", "export", "verify-export", "accuracy"):
+    for name in ("intake", "queue", "show", "resume", "retry", "refresh", "export", "verify-export", "accuracy", "serve"):
         command = subparsers.add_parser(name)
         command.add_argument("--db", type=Path, default=argparse.SUPPRESS)
         if name in ("export", "verify-export"):
@@ -26,7 +26,7 @@ def _parser():
             command.add_argument("--expected", type=Path, required=True)
             command.add_argument("--actual", type=Path, required=True)
             command.add_argument("--output", type=Path, required=True)
-        if name in ("intake", "refresh"):
+        if name in ("intake", "refresh", "serve"):
             command.add_argument("--provider", choices=("mock", "openai"), default="mock")
             command.add_argument("--model", default="gpt-4o-2024-08-06")
             command.add_argument("--endpoint", default="https://api.openai.com/v1")
@@ -34,6 +34,9 @@ def _parser():
             command.add_argument("--workers", type=int, choices=(1, 2), default=2)
             command.add_argument("--min-interval", type=float, default=1.0)
             command.add_argument("--mock-dir", type=Path, default=Path("tests/mock_responses"))
+        if name == "serve":
+            command.add_argument("--port", type=int, default=8765)
+            command.add_argument("--input-dir", type=Path, default=Path("materials/requests"))
         if name == "intake":
             command.add_argument("input_directory", type=Path)
         if name == "refresh":
@@ -142,6 +145,10 @@ def main(argv=None):
     args = _parser().parse_args(argv)
     from .artifacts import ArtifactError, export_snapshot, verify_export, write_accuracy
     try:
+        if args.command == "serve":
+            from .web import serve
+            serve(args.input_dir,args.db,args.mock_dir,config=_validate_processing(args),port=args.port)
+            return 0
         if args.command == "export":
             export_snapshot(args.db, args.output);print("Snapshot exported; run verify-export before use.");return 0
         if args.command == "verify-export":

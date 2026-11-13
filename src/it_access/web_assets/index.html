@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="csrf-token" content="{{CSRF_TOKEN}}">
+  <meta name="description" content="Inspect Northstar access-request messages and their review-ready records side by side.">
+  <title>Request Lab · Northstar</title>
+  <link rel="stylesheet" href="/assets/app.css">
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">✳</span><strong>NORTHSTAR</strong><span class="brand-divider"></span><span>Request Lab</span></div>
+    <span class="local-badge"><span class="status-dot"></span> Local workspace</span>
+  </header>
+  <main class="workspace">
+    <div class="page-heading">
+      <div><p class="eyebrow">ACCESS REQUEST INTAKE</p><h1>From message to review-ready.</h1><p class="intro">Explore how a request becomes structured facts and a next step for IT.</p></div>
+      <span class="human-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z"/><path d="m8 12 3 3 5-6"/></svg>Always a human decision</span>
+    </div>
+    <section class="control-card" aria-label="Select and process a request">
+      <div class="control-grid">
+        <div class="field-control file-control"><label for="file-select">REQUEST FILE <span id="file-count"></span></label><select id="file-select" disabled><option>Loading requests…</option></select></div>
+        <div class="field-control"><label for="provider-select">RESPONSE SOURCE</label><select id="provider-select"><option value="mock">Mock · saved examples</option><option value="openai">Live · OpenAI</option></select></div>
+        <button id="run-button" class="primary-button" disabled><span id="run-label">Run analysis</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5"/></svg></button>
+      </div>
+      <div class="control-bottom"><div class="scenario-list"><span>TRY A SCENARIO</span><button data-file="IT-001.json" class="scenario">Complete request</button><button data-file="IT-004.json" class="scenario">Conflicting details</button><button data-file="IT-006.json" class="scenario">Instruction override</button></div><p id="provider-note">Saved responses. No API call.</p></div>
+    </section>
+    <div id="notice" class="notice hidden" role="alert"></div>
+    <div id="progress" class="progress hidden" role="status" aria-live="polite"><span class="spinner"></span><span>Extracting facts and preparing the review route…</span></div>
+    <div class="panel-grid">
+      <section class="panel input-panel" aria-labelledby="input-title">
+        <div class="panel-heading"><div class="panel-title"><span class="step-number">01</span><h2 id="input-title">Original input</h2></div><span id="channel" class="quiet-badge">JSON EXPORT</span></div>
+        <div class="source-heading"><h3 id="source-subject">Select a request to begin</h3><p id="source-filename">Your source message stays visible throughout processing.</p></div>
+        <div class="tabs" role="tablist" aria-label="Input view"><button id="input-message-tab" role="tab" aria-selected="true" aria-controls="input-message" class="tab active">Message</button><button id="input-json-tab" role="tab" aria-selected="false" aria-controls="input-json" class="tab">Raw JSON</button></div>
+        <div id="input-message" class="message-body" role="tabpanel" aria-labelledby="input-message-tab">Choose one of the supplied JSON exports above. The original message will appear here.</div>
+        <pre id="input-json" class="code-body hidden" role="tabpanel" aria-labelledby="input-json-tab"></pre>
+        <div class="source-footer"><span class="small-dot"></span><span id="source-hash">Source evidence, preserved exactly.</span></div>
+      </section>
+      <section id="result-panel" class="panel output-panel" aria-labelledby="output-title" aria-live="polite">
+        <div class="panel-heading"><div class="panel-title"><span class="step-number">02</span><h2 id="output-title">Prepared output</h2></div><span id="output-origin" class="quiet-badge hidden"></span></div>
+        <div id="output-empty" class="empty-state"><div class="empty-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 7h14l8 8v26H14V7Z"/><path d="M28 7v9h8M20 24h10M20 30h7"/><path d="m6 21 4 4-4 4"/></svg></div><h3>A clearer picture of the request.</h3><p>Run the analysis to see extracted facts,<br>supporting evidence, and the next review step.</p><span class="empty-caption">Structured output · Source-grounded evidence</span></div>
+        <div id="output-content" class="hidden">
+          <div class="result-summary"><div class="result-topline"><span id="result-status" class="result-status"></span><span id="cache-label" class="cache-label"></span></div><div class="route-grid"><div><span class="data-label">REVIEW OWNER</span><strong id="result-owner"></strong></div><div><span class="data-label">NEXT STEP</span><strong id="result-action"></strong></div></div></div>
+          <div id="result-error" class="error-box hidden"></div>
+          <div id="issues-section" class="issues-box hidden"><h3>Items to resolve</h3><ul id="issues-list"></ul></div>
+          <div class="tabs output-tabs" role="tablist" aria-label="Output view"><button id="output-facts-tab" class="tab active" role="tab" aria-selected="true" aria-controls="facts-view">Extracted facts</button><button id="output-json-tab" class="tab" role="tab" aria-selected="false" aria-controls="output-json">JSON output</button></div>
+          <div id="facts-view" role="tabpanel" aria-labelledby="output-facts-tab"><div id="facts-grid" class="facts-grid"></div><details id="evidence-section" class="evidence-section"><summary>Supporting evidence <span id="quote-count"></span></summary><p class="evidence-hint">Choose a quote to find it in the original message.</p><div id="quotes-list"></div></details></div>
+          <pre id="output-json" class="code-body output-code hidden" role="tabpanel" aria-labelledby="output-json-tab"></pre>
+          <div class="result-footer">Prepared for review. No access has been approved or granted.</div>
+        </div>
+      </section>
+    </div>
+    <footer class="page-footer"><span>Northstar Labs <span>·</span> Fictional training data</span><span>Extract. Validate. Route for human review.</span></footer>
+  </main>
+</body>
+</html>

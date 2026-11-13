@@ -1,0 +1,19 @@
+test_W_01_sources_and_confinement (test_web.WebDemoContract.test_W_01_sources_and_confinement) ... ok
+test_W_02_pipeline_and_cache (test_web.WebDemoContract.test_W_02_pipeline_and_cache) ... IT-004.json	needs-information	IT Service Desk	clarify
+ok
+test_W_03_intercepted_live_error_retry (test_web.WebDemoContract.test_W_03_intercepted_live_error_retry) ... IT-001.json	error	IT Service Desk	retry-extraction
+Provider HTTP 401; check service access or retry later.
+it-access --db /tmp/tmp3kes9lit/web.sqlite3 retry IT-001.json
+IT-001.json	review	System Owner	review-request
+ok
+test_W_04_rejected_requests (test_web.WebDemoContract.test_W_04_rejected_requests) ... ok
+test_W_05_busy_but_readable (test_web.WebDemoContract.test_W_05_busy_but_readable) ... IT-001.json	review	System Owner	review-request
+ok
+test_W_06_assets_and_text_rendering (test_web.WebDemoContract.test_W_06_assets_and_text_rendering) ... ok
+test_W_07_cli_launch_options (test_web.WebDemoContract.test_W_07_cli_launch_options) ... ok
+test_W_08_rejected_http_connection_is_closed (test_web.WebDemoContract.test_W_08_rejected_http_connection_is_closed) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.292s
+
+OK

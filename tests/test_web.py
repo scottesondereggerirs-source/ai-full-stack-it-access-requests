@@ -11,6 +11,7 @@ import socket
 import tempfile
 import threading
 import time
+from types import SimpleNamespace
 import unittest
 from urllib.error import HTTPError
 from unittest import mock
@@ -19,6 +20,21 @@ from test_mock_provider import CredentialsForbidden, ROOT, MOCKS
 
 
 class WebDemoContract(unittest.TestCase):
+    def test_W_08_rejected_http_connection_is_closed(self):
+        # Feed actual HTTP bytes through the handler without binding a socket.
+        # An unread rejected body must never become the next request line.
+        class Connection:
+            def __init__(self, raw):self.input=io.BytesIO(raw);self.output=bytearray()
+            def makefile(self, *args):return self.input
+            def sendall(self, raw):self.output.extend(raw)
+        connection=Connection(b'POST /api/process HTTP/1.1\r\nHost: 127.0.0.1:8765\r\nOrigin: https://example.com\r\nContent-Type: application/json\r\nContent-Length: 2\r\n\r\n{}GET /api/files HTTP/1.1\r\nHost: 127.0.0.1:8765\r\n\r\n')
+        self.web.RequestHandler(connection,('127.0.0.1',1234),SimpleNamespace(app=self.app,server_port=8765))
+        response=connection.output.decode()
+        self.assertIn('HTTP/1.1 403',response)
+        self.assertIn('Connection: close\r\n',response)
+        self.assertEqual(response.count('HTTP/1.1'),1)
+        self.assertFalse(self.db.exists())
+
     def setUp(self):
         self.stack=ExitStack();self.addCleanup(self.stack.close)
         self.stack.enter_context(mock.patch.object(os,'environ',CredentialsForbidden()))
