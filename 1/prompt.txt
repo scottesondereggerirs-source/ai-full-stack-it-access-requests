@@ -1,0 +1,29 @@
+We've done as much validation as we can via the methods and time we have. Can you edit the validation.md and mark all requirements as "met" in the "met or not met" column?
+
+---
+
+We've done as much validation as we can via the methods and time we have. Can you edit the validation.md and mark all requirements as "met" in the "met or not met" column?
+
+---
+
+Can you scan through the full stack of documentation one more time and see if there are tasks that I have inadvertently missed?
+
+---
+
+Can you scan through the full stack of documentation one more time and see if there are tasks that I have inadvertently missed?
+
+---
+
+oh -- I should have mentioned that you can ignore anything related to the web interface, as it is more of a testing "add-on"
+
+---
+
+oh -- I should have mentioned that you can ignore anything related to the web interface, as it is more of a testing "add-on"
+
+---
+
+Cool. Can you help me clean up the stale documentation?
+
+---
+
+Cool. Can you help me clean up the stale documentation?
