@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-001",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-001",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-101\", \"request_date\": \"2026-10-22\", \"kind\": \"new\", \"requester\": \"Maya Chen\", \"team\": \"Analytics\", \"system\": \"Atlas\", \"environment\": \"staging\", \"permission\": null, \"business_purpose\": \"verify the weekly conversion dashboard against the sample records before the next reporting cycle.\", \"start_date\": \"2026-10-23\", \"end_date\": \"2026-11-06\", \"manager\": \"Priya Shah\", \"supporting_quotes\": [\"Please log request IT-101. The request date is 2026-10-22. This is a new access request. I am Maya Chen. My team is Analytics. The system is Atlas. The environment is staging. My purpose is to verify the weekly conversion dashboard against the sample records before the next reporting cycle. Start date: 2026-10-23. End date: 2026-11-06. My manager is Priya Shah.\"], \"issues\": []}"
+        }
+      ]
+    }
+  ]
+}

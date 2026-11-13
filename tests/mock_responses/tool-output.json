@@ -1,0 +1,13 @@
+{
+  "id": "mock_IT-001",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "type": "function_call",
+      "name": "grant_access",
+      "arguments": "{}",
+      "call_id": "mock_call"
+    }
+  ]
+}

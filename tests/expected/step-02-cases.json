@@ -1,0 +1,850 @@
+{
+  "format_version": 1,
+  "basis": "Explicit source transformations specified by planning/plan.md; no application output used.",
+  "cases": [
+    {
+      "name": "new-missing-request_id",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-request_id/IT-101.json",
+      "response_file": "new-missing-request_id.json",
+      "fields": {
+        "request_id": null,
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:request_id"
+      ],
+      "source_sha256": "08f5436c59f6efcc081f90c08079ab9014a77a5fc9e50a6ae7812d8e7a8f8115"
+    },
+    {
+      "name": "new-missing-request_date",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-request_date/IT-101.json",
+      "response_file": "new-missing-request_date.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": null,
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:request_date"
+      ],
+      "source_sha256": "77218fc5c45e540bf2242cb2192b7f13e47c8a2304b145950f7a6b16e004ff00"
+    },
+    {
+      "name": "new-missing-kind",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-kind/IT-101.json",
+      "response_file": "new-missing-kind.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": null,
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:kind"
+      ],
+      "source_sha256": "60d7bf003d3fca378453335408057e6c7b88a04435ecd1e1fae8c9a25c2aaf3b"
+    },
+    {
+      "name": "new-missing-requester",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-requester/IT-101.json",
+      "response_file": "new-missing-requester.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": null,
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:requester"
+      ],
+      "source_sha256": "bdadbc7b7c7d1e33646fda34b972765eb23b9b953e00a0659ebfdb9772f402a5"
+    },
+    {
+      "name": "new-missing-team",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-team/IT-101.json",
+      "response_file": "new-missing-team.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": null,
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:team"
+      ],
+      "source_sha256": "623da75b8413777c19e8fdfd03614fab9af5d2ab018e3beedc97cdde82db0bb9"
+    },
+    {
+      "name": "new-missing-system",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-system/IT-101.json",
+      "response_file": "new-missing-system.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": null,
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:system"
+      ],
+      "source_sha256": "ddfb84ed3828a8cb2b95f45a754f39c8a13dea069bd585de3e761174f4df2477"
+    },
+    {
+      "name": "new-missing-environment",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-environment/IT-101.json",
+      "response_file": "new-missing-environment.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": null,
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:environment"
+      ],
+      "source_sha256": "5a5f626728ad264c7bd6b1941843390be102de1a021430999c2553addd369724"
+    },
+    {
+      "name": "new-missing-permission",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-permission/IT-101.json",
+      "response_file": "new-missing-permission.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": null,
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:permission"
+      ],
+      "source_sha256": "9305d87107ab98297920e0ab2ecc7b66f54b306ca480477c32d9fb3eaa7ab232"
+    },
+    {
+      "name": "new-missing-business_purpose",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-business_purpose/IT-101.json",
+      "response_file": "new-missing-business_purpose.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": null,
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:business_purpose"
+      ],
+      "source_sha256": "dd1834403bfebe8331fa4e4568d6cb0073c0bfb2ab05c8c3d3d45d4b2ccc60b7"
+    },
+    {
+      "name": "new-missing-start_date",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-start_date/IT-101.json",
+      "response_file": "new-missing-start_date.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": null,
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:start_date"
+      ],
+      "source_sha256": "fc9c78700c161ff85d4f3f6aca892ed55dc742188fff55d369987f2bcd8b13d0"
+    },
+    {
+      "name": "new-missing-end_date",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-end_date/IT-101.json",
+      "response_file": "new-missing-end_date.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": null,
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:end_date"
+      ],
+      "source_sha256": "a36621f04a9b0cdc802d31628dee14b54b5cd99c9ba7f3ed2639e586eb348eda"
+    },
+    {
+      "name": "new-missing-manager",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/new-missing-manager/IT-101.json",
+      "response_file": "new-missing-manager.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": null
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:manager"
+      ],
+      "source_sha256": "ac8ec45fbb0fad676ef49ef6ca8b8b870b62a2bc000be59e1ef77cfbe9adba1e"
+    },
+    {
+      "name": "change-missing-request_id",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-request_id/IT-101.json",
+      "response_file": "change-missing-request_id.json",
+      "fields": {
+        "request_id": null,
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:request_id"
+      ],
+      "source_sha256": "507f1373e7f251a1bac66e4670b9b4ef375618d093352f3049c558b29835c1bf"
+    },
+    {
+      "name": "change-missing-request_date",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-request_date/IT-101.json",
+      "response_file": "change-missing-request_date.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": null,
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:request_date"
+      ],
+      "source_sha256": "bbfc312bfa163b974aad056155e57b93e7dccb03b925c9db45b8d91c26a3bd48"
+    },
+    {
+      "name": "change-missing-kind",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-kind/IT-101.json",
+      "response_file": "change-missing-kind.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": null,
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:kind"
+      ],
+      "source_sha256": "60d7bf003d3fca378453335408057e6c7b88a04435ecd1e1fae8c9a25c2aaf3b"
+    },
+    {
+      "name": "change-missing-requester",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-requester/IT-101.json",
+      "response_file": "change-missing-requester.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": null,
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:requester"
+      ],
+      "source_sha256": "0ddfe58b29828033b0394e2585725f1a72c54d5db9c7407a1536040e6032cfa9"
+    },
+    {
+      "name": "change-missing-team",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-team/IT-101.json",
+      "response_file": "change-missing-team.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": null,
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:team"
+      ],
+      "source_sha256": "4c2f28aa539f0d4db7e33b774aa79879a124383f6fbcd366d6e327217bcc30d9"
+    },
+    {
+      "name": "change-missing-system",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-system/IT-101.json",
+      "response_file": "change-missing-system.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": null,
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:system"
+      ],
+      "source_sha256": "3e3f80dda72726c0b65f8249ac666edb8c36a0e257445637d08b6498bee784ad"
+    },
+    {
+      "name": "change-missing-environment",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-environment/IT-101.json",
+      "response_file": "change-missing-environment.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": null,
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:environment"
+      ],
+      "source_sha256": "cab24d99367d83d61ccac573bf4a0b1504622cb8c25b2f23d7175010a1b456d9"
+    },
+    {
+      "name": "change-missing-permission",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-permission/IT-101.json",
+      "response_file": "change-missing-permission.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": null,
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:permission"
+      ],
+      "source_sha256": "a47f84f25f2b45bd7789303deab1ce40d62a0d4faba4c84f0821143e73b1fd72"
+    },
+    {
+      "name": "change-missing-business_purpose",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-business_purpose/IT-101.json",
+      "response_file": "change-missing-business_purpose.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": null,
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:business_purpose"
+      ],
+      "source_sha256": "75bd72d45907f63cb0d30fe65666d32d2367016346e4f5a54b168129651f7a1e"
+    },
+    {
+      "name": "change-missing-start_date",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-start_date/IT-101.json",
+      "response_file": "change-missing-start_date.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": null,
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:start_date"
+      ],
+      "source_sha256": "277983e113b3eee5f1c35910488b0024d026fa862afd6d6d392aa48d258428b0"
+    },
+    {
+      "name": "change-missing-end_date",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-end_date/IT-101.json",
+      "response_file": "change-missing-end_date.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": null,
+        "manager": "Priya Shah"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:end_date"
+      ],
+      "source_sha256": "983196223b17b2ddd24ac1d07c01f69473cdcd6fbf50d9acd787b62dba22be18"
+    },
+    {
+      "name": "change-missing-manager",
+      "document_id": "IT-101.json",
+      "source_path": "tests/inputs/step-02/change-missing-manager/IT-101.json",
+      "response_file": "change-missing-manager.json",
+      "fields": {
+        "request_id": "IT-101",
+        "request_date": "2026-10-22",
+        "kind": "change",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "verify the weekly conversion dashboard against the sample records before the next reporting cycle.",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": null
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:manager"
+      ],
+      "source_sha256": "bd12b45daa52f6e0db34081ce0e2bbd7580b20bfc9cac7569d804875c093f583"
+    },
+    {
+      "name": "override-withdrawal",
+      "document_id": "IT-005.json",
+      "source_path": "tests/inputs/step-02/override-withdrawal/IT-005.json",
+      "response_file": "override-withdrawal.json",
+      "fields": {
+        "request_id": "IT-005",
+        "request_date": "2026-10-22",
+        "kind": "withdrawal",
+        "requester": "Ava Brooks",
+        "team": "Design",
+        "system": null,
+        "environment": null,
+        "permission": null,
+        "business_purpose": "The project that triggered my request has been cancelled so now there is no work for me to do.",
+        "start_date": null,
+        "end_date": null,
+        "manager": "Elena Park"
+      },
+      "status": "review",
+      "owner": "IT Service Desk",
+      "next_action": "inspect-message",
+      "required_issue_codes": [
+        "missing:system",
+        "missing:environment",
+        "missing:permission",
+        "missing:start_date",
+        "missing:end_date",
+        "instruction-override"
+      ],
+      "source_sha256": "0c59f4041bb97cec6bcee4a0e032805c91d14b4c6ba7eb11c8d1537734458d15"
+    },
+    {
+      "name": "benign-approval",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-02/benign-approval/IT-001.json",
+      "response_file": "benign-approval.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "System Owner",
+      "next_action": "review-request",
+      "required_issue_codes": [],
+      "source_sha256": "b4ac915125dfa441e65f4adec7713471e07d601a00729add134a9f44c9e901c9"
+    },
+    {
+      "name": "withdrawal-missing-id",
+      "document_id": "IT-005.json",
+      "source_path": "tests/inputs/step-02/withdrawal-missing-id/IT-005.json",
+      "response_file": "withdrawal-missing-id.json",
+      "fields": {
+        "request_id": null,
+        "request_date": "2026-10-22",
+        "kind": "withdrawal",
+        "requester": "Ava Brooks",
+        "team": "Design",
+        "system": null,
+        "environment": null,
+        "permission": null,
+        "business_purpose": "The project that triggered my request has been cancelled so now there is no work for me to do.",
+        "start_date": null,
+        "end_date": null,
+        "manager": "Elena Park"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:request_id",
+        "missing:system",
+        "missing:environment",
+        "missing:permission",
+        "missing:start_date",
+        "missing:end_date"
+      ],
+      "source_sha256": "d98e746d719a96782a3b1805d7bb2aa2f1808d1b4628dc168acb1d067ea9c80c"
+    },
+    {
+      "name": "withdrawal-missing-date",
+      "document_id": "IT-005.json",
+      "source_path": "tests/inputs/step-02/withdrawal-missing-date/IT-005.json",
+      "response_file": "withdrawal-missing-date.json",
+      "fields": {
+        "request_id": "IT-005",
+        "request_date": null,
+        "kind": "withdrawal",
+        "requester": "Ava Brooks",
+        "team": "Design",
+        "system": null,
+        "environment": null,
+        "permission": null,
+        "business_purpose": "The project that triggered my request has been cancelled so now there is no work for me to do.",
+        "start_date": null,
+        "end_date": null,
+        "manager": "Elena Park"
+      },
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
+      "required_issue_codes": [
+        "missing:request_date",
+        "missing:system",
+        "missing:environment",
+        "missing:permission",
+        "missing:start_date",
+        "missing:end_date"
+      ],
+      "source_sha256": "114298660210e6fc1a33106d1a8c4beecc5ba15041ad289038d165179f482a73"
+    },
+    {
+      "name": "valid-leap-day",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-02/valid-leap-day/IT-001.json",
+      "response_file": "valid-leap-day.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2028-02-29",
+        "end_date": "2028-03-01",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "System Owner",
+      "next_action": "review-request",
+      "required_issue_codes": [],
+      "source_sha256": "8a0bacf83ee33be44d832344dda5d649e9874b9c07a6db9eca613106485706fb"
+    },
+    {
+      "name": "equal-dates",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-02/equal-dates/IT-001.json",
+      "response_file": "equal-dates.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-10-23",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "System Owner",
+      "next_action": "review-request",
+      "required_issue_codes": [],
+      "source_sha256": "e4045852824a3688deb8b08346adfc0d91dd2bfc1abe1ea73492f84dff9e6937"
+    },
+    {
+      "name": "decoded-escape",
+      "document_id": "IT-001.json",
+      "source_path": "tests/inputs/step-02/decoded-escape/IT-001.json",
+      "response_file": "decoded-escape.json",
+      "fields": {
+        "request_id": "IT-001",
+        "request_date": "2026-10-22",
+        "kind": "new",
+        "requester": "Maya Chen",
+        "team": "Analytics",
+        "system": "Atlas",
+        "environment": "staging",
+        "permission": "read",
+        "business_purpose": "I'm checking the weekly conversion dashboard with the new event definition changes (before next reporting cycle).",
+        "start_date": "2026-10-23",
+        "end_date": "2026-11-06",
+        "manager": "Priya Shah"
+      },
+      "status": "review",
+      "owner": "System Owner",
+      "next_action": "review-request",
+      "required_issue_codes": [],
+      "source_sha256": "0a95e2fb37411a38ab62f3bff68d813524cf2dd78703d16aef173824732832ec"
+    }
+  ]
+}

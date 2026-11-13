@@ -1,0 +1,19 @@
+{
+  "id": "mock_IT-001",
+  "status": "completed",
+  "model": "mock",
+  "output": [
+    {
+      "id": "mock_message_IT-001",
+      "type": "message",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "{\"request_id\": \"IT-001\","
+        }
+      ]
+    }
+  ]
+}

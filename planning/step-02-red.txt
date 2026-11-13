@@ -1,0 +1,305 @@
+test_T_02_complete_request (test_extraction.ExtractionContract.test_T_02_complete_request) ... ERROR
+test_T_03_missing_dates (test_extraction.ExtractionContract.test_T_03_missing_dates) ... ERROR
+test_T_04_conflicting_details (test_extraction.ExtractionContract.test_T_04_conflicting_details) ... ERROR
+test_T_05_embedded_instructions (test_extraction.ExtractionContract.test_T_05_embedded_instructions) ... ERROR
+test_T_06_withdrawal (test_extraction.ExtractionContract.test_T_06_withdrawal) ... ERROR
+test_T_07_security_routes (test_extraction.ExtractionContract.test_T_07_security_routes) ... ERROR
+test_T_08_change_permission (test_extraction.ExtractionContract.test_T_08_change_permission) ... ERROR
+test_T_09_corrections (test_extraction.ExtractionContract.test_T_09_corrections) ... ERROR
+test_T_10_missing_facts (test_extraction.ExtractionContract.test_T_10_missing_facts) ... ERROR
+test_T_11_identifier_mismatch (test_extraction.ExtractionContract.test_T_11_identifier_mismatch) ... ERROR
+test_T_12_other_kind (test_extraction.ExtractionContract.test_T_12_other_kind) ... ERROR
+test_T_13_reversed_range (test_extraction.ExtractionContract.test_T_13_reversed_range) ... ERROR
+test_T_14_paraphrase_and_prompt_boundary (test_extraction.ExtractionContract.test_T_14_paraphrase_and_prompt_boundary) ... ERROR
+test_T_15_schema_date_matrix (test_extraction.ExtractionContract.test_T_15_schema_date_matrix) ... ERROR
+test_T_16_quote_evidence (test_extraction.ExtractionContract.test_T_16_quote_evidence) ... ERROR
+test_T_17_malformed_output (test_extraction.ExtractionContract.test_T_17_malformed_output) ... ERROR
+test_T_18_refusal (test_extraction.ExtractionContract.test_T_18_refusal) ... ERROR
+test_T_19_interrupted_response (test_extraction.ExtractionContract.test_T_19_interrupted_response) ... ERROR
+test_T_01_changed_source_does_not_reuse_the_old_fixture (test_mock_provider.MockProviderContract.test_T_01_changed_source_does_not_reuse_the_old_fixture) ... ok
+test_T_01_configuration_and_response_metadata_are_frozen (test_mock_provider.MockProviderContract.test_T_01_configuration_and_response_metadata_are_frozen) ... ok
+test_T_01_expected_facts_are_source_grounded (test_mock_provider.MockProviderContract.test_T_01_expected_facts_are_source_grounded)
+Check the independent oracle against original text, not mock replies. ... ok
+test_T_01_inconsistent_message_is_not_hidden_by_a_matching_source_hash (test_mock_provider.MockProviderContract.test_T_01_inconsistent_message_is_not_hidden_by_a_matching_source_hash) ... ok
+test_T_01_mock_provider_offline (test_mock_provider.MockProviderContract.test_T_01_mock_provider_offline) ... ok
+test_T_01_response_payloads_are_isolated_between_calls (test_mock_provider.MockProviderContract.test_T_01_response_payloads_are_isolated_between_calls) ... ok
+test_T_01_saved_fixture_manifest_is_complete (test_mock_provider.MockProviderContract.test_T_01_saved_fixture_manifest_is_complete) ... ok
+test_T_01_unknown_document_has_no_generic_success_fallback (test_mock_provider.MockProviderContract.test_T_01_unknown_document_has_no_generic_success_fallback) ... ok
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+
+======================================================================
+ERROR: test_T_02_complete_request (test_extraction.ExtractionContract.test_T_02_complete_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_03_missing_dates (test_extraction.ExtractionContract.test_T_03_missing_dates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_04_conflicting_details (test_extraction.ExtractionContract.test_T_04_conflicting_details)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_05_embedded_instructions (test_extraction.ExtractionContract.test_T_05_embedded_instructions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_06_withdrawal (test_extraction.ExtractionContract.test_T_06_withdrawal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_07_security_routes (test_extraction.ExtractionContract.test_T_07_security_routes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_08_change_permission (test_extraction.ExtractionContract.test_T_08_change_permission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_09_corrections (test_extraction.ExtractionContract.test_T_09_corrections)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_10_missing_facts (test_extraction.ExtractionContract.test_T_10_missing_facts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_11_identifier_mismatch (test_extraction.ExtractionContract.test_T_11_identifier_mismatch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_12_other_kind (test_extraction.ExtractionContract.test_T_12_other_kind)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_13_reversed_range (test_extraction.ExtractionContract.test_T_13_reversed_range)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_14_paraphrase_and_prompt_boundary (test_extraction.ExtractionContract.test_T_14_paraphrase_and_prompt_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_15_schema_date_matrix (test_extraction.ExtractionContract.test_T_15_schema_date_matrix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_16_quote_evidence (test_extraction.ExtractionContract.test_T_16_quote_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_17_malformed_output (test_extraction.ExtractionContract.test_T_17_malformed_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_18_refusal (test_extraction.ExtractionContract.test_T_18_refusal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+======================================================================
+ERROR: test_T_19_interrupted_response (test_extraction.ExtractionContract.test_T_19_interrupted_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 51, in setUp
+    self.pipeline = importlib.import_module("it_access.extraction")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'it_access.extraction'
+
+----------------------------------------------------------------------
+Ran 29 tests in 0.056s
+
+FAILED (errors=18)
