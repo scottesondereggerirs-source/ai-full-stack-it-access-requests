@@ -1,6 +1,16 @@
 # Verification, observations and limits
 
-All extraction observations committed here use mock responses. The OpenAI request adapter is implemented and tested using intercepted HTTP and synthetic credentials; no live API key, live provider availability, throughput or model accuracy was observed.
+All committed successful extraction records and accuracy observations use mock responses. The OpenAI request adapter is tested using intercepted HTTP and synthetic credentials. A subsequent operator-initiated live request returned HTTP 429, as recorded below; no successful live extraction, live throughput or live-model accuracy was verified.
+
+## Subsequent operator review and runtime checks
+
+During the captured review, the user cited the policy's boundary that all successful intake outputs await human review. On checking IT-001 against `materials/office-policy.md` rule 5, the assistant clarified that the complete staging/read request belongs to System Owner with status `review` and next action `review-request`, rather than IT Service Desk. The committed output matches that rule. This records the discussion and correction; it does not establish that every source fact or routing case was independently reviewed by the user.
+
+The user directed a refresh and retry to address historical prompts. In the existing local demonstration database, all five current records already used the repaired prompt. Mock refresh selected zero requests and created no duplicate attempts. Retrying IT-001 created attempt 13 from attempt 8. Assertions verified the exact current prompt and its SHA-256, unchanged settings/source revision/source hash/facts/quotes/issues/route, and preservation of attempt 8 unchanged in history. All five current records used the repaired prompt after the check. No network or API key was used for this refresh/retry verification. These observations concern the local ignored demonstration database; the committed 20-message mock publication remains separate.
+
+After the user supplied a credential through a private temporary file, the assistant loaded it into the server's API_KEY environment and deleted the temporary file. The user then attempted live extraction of IT-001 using configured provider `openai`, model `gpt-4o-2024-08-06`, and endpoint `https://api.openai.com/v1`. The recorded result is `error / IT Service Desk / retry-extraction`, null extraction, category `rate_limit`, and message `Provider HTTP 429; check service access or retry later.` No Retry-After value was recorded. The current error handler does not retain the provider error body, so this evidence cannot distinguish transient rate limiting from quota or spending restrictions, establish credential permissions, or confirm a completed model generation. Credentials are excluded from these records. No successful live extraction or live accuracy comparison is claimed.
+
+The capture audit for the earlier submitted commit 7389a67 found all 25 local checkpoint refs on GitHub with matching full object IDs. Its linked capture includes the original assignment/MVP/test/build discussion as well as web troubleshooting. This verifies capture availability, not which transcripts the grader ingested. Subsequent repairs and this verification update have their own commit-linked checkpoints. These observations do not change the historical acceptance verdicts in planning/validation.md or establish newly completed model-selection, latency-comparison, or source-uncertainty decisions.
 
 ## Post-feedback prompt repair
 
