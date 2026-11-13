@@ -221,8 +221,9 @@ class ExtractionContract(unittest.TestCase):
         self.assertEqual(attacked_messages[1]["content"], attack)
         self.assertEqual(messages[0], attacked_messages[0])
         instructions = messages[0]["content"]
-        for field in self.schema["required"]:
-            self.assertIn(field, instructions)
+        self.assertEqual(instructions,self.pipeline.PROMPT_PATH.read_text(encoding="utf-8"))
+        self.assertNotIn(self.pipeline.SCHEMA_PATH.read_text(encoding="utf-8"),instructions)
+        self.assertNotIn(self.pipeline.POLICY_PATH.read_text(encoding="utf-8"),instructions)
         for rule in ("correction", "relative", "null", "conflict:", "instruction-override:"):
             self.assertIn(rule, instructions.lower())
         self.assertNotIn(attack, instructions)

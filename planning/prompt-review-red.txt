@@ -1,0 +1,57 @@
+test_T_14_paraphrase_and_prompt_boundary (test_extraction.ExtractionContract.test_T_14_paraphrase_and_prompt_boundary) ... FAIL
+
+======================================================================
+FAIL: test_T_14_paraphrase_and_prompt_boundary (test_extraction.ExtractionContract.test_T_14_paraphrase_and_prompt_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_extraction.py", line 224, in test_T_14_paraphrase_and_prompt_boundary
+    self.assertEqual(instructions,self.pipeline.PROMPT_PATH.read_text(encoding="utf-8"))
+AssertionError: 'You [2240 chars]on.\n\n\nNorthstar policy:\n# Northstar access[5913 chars]n}\n' != 'You [2240 chars]on.\n'
+Diff is 8400 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.061s
+
+FAILED (failures=1)
+test_T_34_provider_request (test_live_provider.LiveProviderContract.test_T_34_provider_request) ... FAIL
+
+======================================================================
+FAIL: test_T_34_provider_request (test_live_provider.LiveProviderContract.test_T_34_provider_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_live_provider.py", line 39, in test_T_34_provider_request
+    self.assertEqual(body["input"][0], {"role":"system", "content":extraction.PROMPT_PATH.read_text(encoding="utf-8")})
+AssertionError: {'rol[2270 chars]on.\n\n\nNorthstar policy:\n# Northstar access[5914 chars]}\n'} != {'rol[2270 chars]on.\n'}
+Diff is 12911 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.067s
+
+FAILED (failures=1)
+test_T_34_provider_request (test_live_provider.LiveProviderContract.test_T_34_provider_request) ... FAIL
+test_T_35_provider_response_errors (test_live_provider.LiveProviderContract.test_T_35_provider_response_errors) ... ok
+test_T_36_credential_redaction (test_live_provider.LiveProviderContract.test_T_36_credential_redaction) ... ok
+test_T_44_committed_request_evidence (test_live_provider.LiveProviderContract.test_T_44_committed_request_evidence) ... FAIL
+
+======================================================================
+FAIL: test_T_34_provider_request (test_live_provider.LiveProviderContract.test_T_34_provider_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_live_provider.py", line 39, in test_T_34_provider_request
+    self.assertEqual(body["input"][0], {"role":"system", "content":extraction.PROMPT_PATH.read_text(encoding="utf-8")})
+AssertionError: {'rol[2270 chars]on.\n\n\nNorthstar policy:\n# Northstar access[5914 chars]}\n'} != {'rol[2270 chars]on.\n'}
+Diff is 12911 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_T_44_committed_request_evidence (test_live_provider.LiveProviderContract.test_T_44_committed_request_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_live_provider.py", line 65, in test_T_44_committed_request_evidence
+    self.assertEqual(evidence["body"]["input"][0],{"role":"system","content":extraction.PROMPT_PATH.read_text(encoding="utf-8")})
+AssertionError: {'rol[2270 chars]on.\n\n\nNorthstar policy:\n# Northstar access[5914 chars]}\n'} != {'rol[2270 chars]on.\n'}
+Diff is 12911 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.080s
+
+FAILED (failures=2)

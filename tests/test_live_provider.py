@@ -35,6 +35,8 @@ class LiveProviderContract(unittest.TestCase):
         self.assertEqual(request.get_header("Authorization"), "Bearer SYNTHETIC_KEY")
         self.assertEqual(transport.call_args.kwargs["timeout"], 60)
         self.assertEqual(body["input"][1], {"role":"user", "content":self.message})
+        from it_access import extraction
+        self.assertEqual(body["input"][0], {"role":"system", "content":extraction.PROMPT_PATH.read_text(encoding="utf-8")})
         self.assertEqual(body["model"], self.config.model)
         self.assertFalse(body["store"])
         self.assertEqual(body["temperature"], 0)
@@ -44,12 +46,30 @@ class LiveProviderContract(unittest.TestCase):
         self.assertEqual(response.response_source, "openai:gpt-4o-2024-08-06")
         self.assertEqual(transport.call_count, 1)
         from dataclasses import replace
-        changed = replace(self.config, endpoint="https://provider.example.test/v1", model="configured-model", timeout_seconds=7)
+        from it_access.runner import capture_settings
+        settings,_ = capture_settings(self.config,MOCKS,2,0)
+        self.assertEqual(settings["system_prompt"],extraction.PROMPT_PATH.read_text(encoding="utf-8"))
+        changed = replace(self.config, endpoint="https://provider.example.test/v1", model="configured-model", timeout_seconds=7,
+                          system_prompt=settings["system_prompt"],extraction_schema=settings["extraction_schema"])
         transport.return_value = io.BytesIO(json.dumps(self.good).encode())
         provider.extract(document_id="IT-001.json", source_sha256="0"*64, message=self.message, config=changed)
         self.assertEqual(transport.call_args.args[0].full_url,"https://provider.example.test/v1/responses")
         self.assertEqual(json.loads(transport.call_args.args[0].data)["model"],"configured-model")
+        self.assertEqual(json.loads(transport.call_args.args[0].data)["input"][0],body["input"][0])
+        self.assertEqual(json.loads(transport.call_args.args[0].data)["text"]["format"],body["text"]["format"])
         self.assertEqual(transport.call_args.kwargs["timeout"],7)
+
+    def test_T_44_committed_request_evidence(self):
+        from it_access import extraction
+        evidence=json.loads((ROOT/"deliverables/request-evidence.json").read_text())
+        self.assertEqual(evidence["body"]["input"][0],{"role":"system","content":extraction.PROMPT_PATH.read_text(encoding="utf-8")})
+        self.assertEqual(evidence["body"]["text"]["format"]["schema"],json.loads(extraction.SCHEMA_PATH.read_text()))
+        self.assertTrue(evidence["body"]["text"]["format"]["strict"])
+        expected=self.module.OpenAIProvider(environ={}).request_evidence(self.message,self.config)
+        for field in ("url","method","headers","timeout_seconds","body"):
+            self.assertEqual(evidence[field],expected[field])
+        self.assertEqual(evidence["headers"]["Authorization"],"Bearer [REDACTED]")
+        self.assertIn('No live provider call',evidence["observation"])
 
     def test_T_35_provider_response_errors(self):
         from it_access.providers import ProviderError
