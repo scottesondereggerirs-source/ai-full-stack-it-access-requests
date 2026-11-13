@@ -1,0 +1,85 @@
+We've done as much validation as we can via the methods and time we have. Can you edit the validation.md and mark all requirements as "met" in the "met or not met" column?
+
+---
+
+We've done as much validation as we can via the methods and time we have. Can you edit the validation.md and mark all requirements as "met" in the "met or not met" column?
+
+---
+
+Can you scan through the full stack of documentation one more time and see if there are tasks that I have inadvertently missed?
+
+---
+
+Can you scan through the full stack of documentation one more time and see if there are tasks that I have inadvertently missed?
+
+---
+
+oh -- I should have mentioned that you can ignore anything related to the web interface, as it is more of a testing "add-on"
+
+---
+
+oh -- I should have mentioned that you can ignore anything related to the web interface, as it is more of a testing "add-on"
+
+---
+
+Cool. Can you help me clean up the stale documentation?
+
+---
+
+Cool. Can you help me clean up the stale documentation?
+
+---
+
+there are instructions in the clie for me regarding the api key. I can't copy/paste from there. Can you put it here so i can copy it?
+
+---
+
+there are instructions in the clie for me regarding the api key. I can't copy/paste from there. Can you put it here so i can copy it?
+
+---
+
+it's in my current cli session. Starts with key_file
+
+---
+
+it's in my current cli session. Starts with key_file
+
+---
+
+ah -- so I'm supposed to know my key, I guess
+
+---
+
+ah -- so I'm supposed to know my key, I guess
+
+---
+
+how do i figure it out?
+
+---
+
+how do i figure it out?
+
+---
+
+ok. I tried this piece "key_file=$(mktemp /tmp/request-lab-key."         and filled in the rest of the file name, but I got "mktemp: too few X's in template ‘/tmp/request-lab-key.0RfgJv’"
+
+---
+
+ok. I tried this piece "key_file=$(mktemp /tmp/request-lab-key."         and filled in the rest of the file name, but I got "mktemp: too few X's in template ‘/tmp/request-lab-key.0RfgJv’"
+
+---
+
+Why is this working in the CLI? Because the instructions had us unset API_KEY and force it to be blank?
+
+---
+
+Why is this working in the CLI? Because the instructions had us unset API_KEY and force it to be blank?
+
+---
+
+So we still haven't really tested it
+
+---
+
+So we still haven't really tested it
