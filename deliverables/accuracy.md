@@ -17,7 +17,7 @@ Inputs: expected=tests/expected/facts.json; actual=deliverables/accuracy-input.j
     "provider": "mock",
     "endpoint": "https://api.openai.com/v1",
     "model": "gpt-4o-2024-08-06",
-    "prompt_sha256": "5321d40610282b9a296943f0644b9dcc48f8953c2a56ae143c4cd3a879083378",
+    "prompt_sha256": "1c73731fd71ab78b253e0090984d0ab7e2e4886ee35e7b14cec3565cd365671a",
     "schema_sha256": "2802bed75be35046552b6d23f45447b416b440fc8ba5a62a9d1d50d0eebbc636",
     "policy_sha256": "b949596765aef45377d9f8d0792f9113109b1f811ef4f3be26919c162e1f631a",
     "routing_version": "1",

@@ -2,6 +2,18 @@
 
 All extraction observations committed here use mock responses. The OpenAI request adapter is implemented and tested using intercepted HTTP and synthetic credentials; no live API key, live provider availability, throughput or model accuracy was observed.
 
+## Post-feedback prompt repair
+
+The submitted implementation duplicated the schema in the system prompt and the native structured-output setting. `build_messages()` now reads system instructions exclusively from `src/it_access/extraction_prompt.txt`; it appends neither `snapshot.schema.json` nor `materials/office-policy.md`. The schema remains in the provider's native `text.format` configuration with `strict: true`. Python still validates responses and applies the policy for human review.
+
+T-14 checks the exact prompt-file/source-message separation. T-34 checks both direct and captured-settings request construction, including the separate strict schema. T-44 checks that the committed credential-redacted request evidence agrees with the implementation. [Failing checks](../planning/prompt-review-red.txt) were committed before the repair; [targeted passing checks](../planning/prompt-review-targeted-green.txt) and [full regression output](../planning/prompt-review-green.txt) record the repaired behavior.
+
+The post-feedback full regression passed all 63 tests in 36.519 seconds with API_KEY unset. No live model was used.
+
+The 20-message extraction/queue publication, separate 21-message accuracy input, accuracy report, and request evidence were regenerated using the repaired configuration. [Artifact comparison](../planning/prompt-review-artifacts.txt) verifies unchanged source hashes, extracted facts, quotes, issues, routes and mock provenance against the prior deliverables. Publication IDs, timestamps and prompt settings change; scalar exact match remains 252/252 and routing remains 21/21. These are mock observations, not evidence of live-model accuracy or a new human acceptance decision.
+
+Existing database attempts retain their recorded historical prompts. A new intake with the changed prompt gets a different settings fingerprint; operators can explicitly refresh affected documents as documented in README.md. Resuming/retrying an older attempt preserves its recorded settings for reproducibility.
+
 ## Reproducible commands and assertions
 
 Run from the repository root after the locked editable install in README.md:

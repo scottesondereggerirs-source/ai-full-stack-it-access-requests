@@ -57,6 +57,8 @@ Use only the scheme and hostname (and port, if present), without a URL path. The
 
 ## Live configuration
 
+System instructions come exclusively from `src/it_access/extraction_prompt.txt`. The supplied `snapshot.schema.json` is sent separately through the provider's native strict structured-output configuration; the schema and policy documents are not appended to the prompt. Python then validates the returned envelope, structure, dates and exact quotes and applies the office policy for human review. Schema conformity alone does not establish factual correctness.
+
 The facilitator supplies `API_KEY` in the environment. Only live mode reads it; do not place it in a source file, database option or URL. No other environment variable is required. Model/provider settings are command options:
 
 ```bash

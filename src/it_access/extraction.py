@@ -37,14 +37,8 @@ class ExtractionError(ValueError):
 
 
 def build_messages(message: str) -> list[dict[str, str]]:
-    """Keep source text out of instructions and metadata out of business facts."""
-    instructions = (
-        PROMPT_PATH.read_text(encoding="utf-8")
-        + "\n\nNorthstar policy:\n"
-        + POLICY_PATH.read_text(encoding="utf-8")
-        + "\n\nExtraction schema:\n"
-        + SCHEMA_PATH.read_text(encoding="utf-8")
-    )
+    """Use file-authored instructions; the provider supplies the schema separately."""
+    instructions = PROMPT_PATH.read_text(encoding="utf-8")
     return [{"role": "system", "content": instructions}, {"role": "user", "content": message}]
 
 
