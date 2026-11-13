@@ -17,9 +17,15 @@ def _parser():
     parser = argparse.ArgumentParser(prog="it-access", description="Prepare Northstar access requests for human review.")
     parser.add_argument("--db", type=Path, default=Path("state/intake.sqlite3"))
     subparsers = parser.add_subparsers(dest="command", required=True)
-    for name in ("intake", "queue", "show", "resume", "retry", "refresh"):
+    for name in ("intake", "queue", "show", "resume", "retry", "refresh", "export", "verify-export", "accuracy"):
         command = subparsers.add_parser(name)
         command.add_argument("--db", type=Path, default=argparse.SUPPRESS)
+        if name in ("export", "verify-export"):
+            command.add_argument("--output", type=Path, default=Path("deliverables"))
+        if name == "accuracy":
+            command.add_argument("--expected", type=Path, required=True)
+            command.add_argument("--actual", type=Path, required=True)
+            command.add_argument("--output", type=Path, required=True)
         if name in ("intake", "refresh"):
             command.add_argument("--provider", choices=("mock", "openai"), default="mock")
             command.add_argument("--model", default="gpt-4o-2024-08-06")
@@ -134,8 +140,19 @@ def _process(args):
 
 def main(argv=None):
     args = _parser().parse_args(argv)
+    from .artifacts import ArtifactError, export_snapshot, verify_export, write_accuracy
     try:
+        if args.command == "export":
+            export_snapshot(args.db, args.output);print("Snapshot exported; run verify-export before use.");return 0
+        if args.command == "verify-export":
+            manifest = verify_export(args.output);print("Verified generation " + manifest["generation_id"]);return 0
+        if args.command == "accuracy":
+            result = write_accuracy(args.expected, args.actual, args.output)
+            print(f"Scalar exact match: {result['correct']}/{result['total']}; routing: {result['routing_correct']}/{result['routing_total']}.")
+            return int(bool(result["errors"] or result["correct"] != result["total"] or result["routing_correct"] != result["routing_total"] or result["evidence_correct"] != result["routing_total"] or result["issues_correct"] != result["routing_total"]))
         return _read(args) if args.command in ("queue", "show") else _process(args)
+    except ArtifactError as error:
+        print(str(error), file=sys.stderr);return 1
     except BusyError as error:
         print(str(error), file=sys.stderr)
         return 3
