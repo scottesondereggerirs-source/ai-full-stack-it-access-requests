@@ -1,6 +1,6 @@
 # IT access-request intake specification
 
-This is the Block 1 draft for human review. Requirements below come only from the assignment sources; chosen architecture and unresolved interpretations are recorded separately under Open questions. A named test in the Check column is a planned check, not an assertion that a test already exists or passes.
+This specification was committed as b88096f and implemented through the seven-step build plan. Requirements below come only from the assignment sources; chosen architecture and unresolved interpretations are recorded separately under Open questions. The Check column preserves the original proposed checks; planning/validation.md maps requirements to implemented evidence and records the user’s acceptance of all 95 requirements. Planning-stage reviews below are retained as historical context.
 
 Prerequisites were checked with `python3 tools/check_prerequisites.py`: all four checks passed and the command reported `READY`. The existing three starter tests passed with `API_KEY` unset; they do not verify the application requirements below.
 
@@ -137,13 +137,13 @@ Only the facilitator's live provider access remains externally unresolved. That 
 
 Which provider, endpoint and model does the facilitator's API_KEY authorize? The source names the environment variable but does not answer that question. Keep it pending until the facilitator supplies the information; develop and verify through the mock adapter in the meantime. If the supplied service differs from the baseline, change the provider adapter/configuration rather than the intake, routing or history design.
 
-### Details to spell out in the build plan
+### Planning-stage details (completed in the build plan)
 
-The detailed plan still needs concrete CLI syntax, database fields/transactions, the internal override finding, named mock envelopes, independently quoted expectations, and one coverage entry per requirement. These are ordinary implementation planning tasks under the defaults above, not additional questions for the facilitator or reasons to add infrastructure. No application code or new tests have been written at this checkpoint.
+At the specification checkpoint, the detailed plan still needed concrete CLI syntax, database fields/transactions, the internal override finding, named mock envelopes, independently quoted expectations, and one coverage entry per requirement. These details are now recorded in planning/plan.md and implemented; this paragraph preserves the original planning scope.
 
 ## MVP review against supplied tests and JSON
 
-This is a design review, not validation of a built application. The local-previous-work directory was excluded. All 20 request exports, the extraction schema, starter mock, starter tests and class verification instructions were inspected.
+This section records the design review performed before implementation; current validation is in planning/validation.md. The local-previous-work directory was excluded. All 20 request exports, the extraction schema, starter mock, starter tests and class verification instructions were inspected.
 
 Observed checks:
 
@@ -170,7 +170,7 @@ The schema enforces shape, not factual truth: it permits arbitrary date strings,
 
 Keep extraction fields separate from the outer processing record: document_id, source_sha256, status, owner, next_action, error and response_source do not belong inside the schema-conforming extraction object. The complete per-field source quotations and named provider envelopes still belong in the detailed build/test plan.
 
-## Review checkpoint
+## Original review checkpoint (completed)
 
 Review each requirement against its quoted source, especially the five routing rules (R-44, R-46, R-48, R-51, R-52), all extracted fields (R-18 through R-31), and each verification case (R-81 through R-91). Checks above are proposed acceptance checks, not observed implementation results. Then commit the reviewed spec as directed in docs/01-research-to-spec.md:
 
@@ -179,4 +179,4 @@ git add planning/spec.md
 git commit -m "Spec: the brief as numbered requirements"
 ```
 
-Next checkpoint: create planning/plan.md from this committed spec with Choices, Steps, Test plan and Coverage, resolving the implementation details above before any application code or new tests are written.
+The subsequent planning checkpoint was completed in planning/plan.md, committed as 3997521 and refined in bd39cb2. Implementation and recorded assignment verification are complete; see deliverables/verification.md and planning/validation.md for results and acceptance.

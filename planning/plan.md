@@ -1,6 +1,6 @@
 # MVP build and test plan
 
-This plan implements the 95 requirements in spec.md, committed as b88096f. It uses the adopted MVP defaults and excludes local-previous-work. Everything below describes intended work and expected behavior, not observed application results. The user authorized creating and committing this plan; implementation starts only after the plan review checkpoint. No application code or new tests are part of this commit.
+This plan implements the 95 requirements in spec.md, committed as b88096f. It uses the adopted MVP defaults and excludes local-previous-work. The seven assignment steps are implemented and committed. The step descriptions and test cases preserve the original intended work and expected behavior; recorded results are in deliverables/verification.md and planning/test-run.txt. planning/validation.md records the user’s acceptance of all 95 requirements.
 
 ## Choices
 
@@ -80,7 +80,7 @@ For each step, first write its named tests/fixtures and run them. Stop for the u
 
 ### Fixture and expectation conventions
 
-Every fixture named below is planned, not yet written. Successful provider envelopes go in tests/mock_responses/IT-NNN.json (and paraphrase.json); each has status completed, one completed assistant message and output_text containing the schema-conforming extraction. Refusal/incomplete/error fixture names are explicit in the cases. The mock adapter returns response_source mock. Errors use saved type/message metadata interpreted as exceptions, never a network request. Wrong-fixture variants remain intentionally wrong to test validation or scoring. Independent expectations live separately under tests/expected. For fresh mock documents without a saved reply, fail explicitly rather than falling back to a generic successful extraction; arbitrary fresh wording is supported through the live adapter, and offline new-document tests provide their own saved reply. Do not derive expected facts by parsing a mock reply or running the application.
+The fixture names below preserve the original test plan; implemented fixtures are under tests/mock_responses/ and the test files define the executed cases. Successful provider envelopes go in tests/mock_responses/IT-NNN.json (and paraphrase.json); each has status completed, one completed assistant message and output_text containing the schema-conforming extraction. Refusal/incomplete/error fixture names are explicit in the cases. The mock adapter returns response_source mock. Errors use saved type/message metadata interpreted as exceptions, never a network request. Wrong-fixture variants remain intentionally wrong to test validation or scoring. Independent expectations live separately under tests/expected. For fresh mock documents without a saved reply, fail explicitly rather than falling back to a generic successful extraction; arbitrary fresh wording is supported through the live adapter, and offline new-document tests provide their own saved reply. Do not derive expected facts by parsing a mock reply or running the application.
 
 Route abbreviations used only in this plan: OWNER = review / System Owner / review-request; SECURITY = review / Security Review / review-risk-then-owner; CLARIFY = needs-information / IT Service Desk / clarify; WITHDRAW = review / IT Service Desk / confirm-withdrawal; OVERRIDE = review / IT Service Desk / inspect-message; ERROR = error / IT Service Desk / retry-extraction, extraction null. Each abbreviation expands to all three exact asserted fields.
 
@@ -308,13 +308,13 @@ Each row names the owning build steps and acceptance cases. These are planned ch
 | R-94 | The submission includes an implemented provider integration and source-grounded validation procedure. | 5, 6, 7 | T-34, T-35, T-39, T-40, T-43 |
 | R-95 | Reproducible development examples use mocked responses. | 1, 5, 6, 7 | T-01, T-36, T-40, T-42 |
 
-### Not yet covered
+### Coverage status
 
-All 95 requirements have a planned build step and check after the semantic coverage audit below. This is traceability coverage, not an executable test pass rate or code/branch coverage. Facilitator-specific API access remains pending and optional live measurements remain unperformed. Human review, commits, validation verdicts and final submission actions require actual evidence when they occur.
+All 95 requirements map to a build step and check after the semantic coverage audit below. The seven steps are implemented and the user has accepted all 95 validation verdicts. This mapping is traceability coverage, not a code/branch coverage measurement. Facilitator-specific API access remains unconfirmed and optional live measurements remain unperformed. Final session pairing, default-branch push and Classroom submission require confirmation during hand-in.
 
 ### Negative-case and coverage audit
 
-This audit reviewed the source messages, schema, class-required cases, MVP contracts and the substance of each coverage link. The 43 rows are case groups with parameterized subcases, not 43 tests that have been implemented. Only the three supplied starter tests currently exist; they passed with API_KEY unset during this review. None of the planned application tests or extra mock files exists yet. No application statement/branch coverage or live extraction accuracy has been measured.
+This audit was performed before implementation and reviewed the source messages, schema, class-required cases, MVP contracts and the substance of each coverage link. The 43 rows describe case groups with parameterized subcases. At that checkpoint only the three starter tests existed. The application tests and fixtures have since been implemented; the recorded assignment run passed 53 tests with no skips. No application statement/branch coverage or live extraction accuracy has been measured.
 
 | Test dimension | Planned checks | Expected rejection or recovery |
 |---|---|---|
@@ -332,6 +332,6 @@ Corrections made by this audit: expanded omission matrices to change requests, m
 
 The plan includes technical errors, command rejection and human clarification, not an automated decision to deny access. Business approval remains a human decision under the office policy. A passing mock test establishes the tested pipeline behavior, not that a live model cannot hallucinate. Storage corruption/full-disk recovery, multiple hosts, arbitrary prompt-attack detection and provider throughput guarantees remain outside the documented MVP rather than being claimed as tested.
 
-### Plan review and implementation checkpoint
+### Original plan review and implementation checkpoint (completed)
 
-Before application work, inspect the expected facts against the source messages and the five policy rules, especially IT-004/IT-020 conflicts, IT-008/IT-015 corrections, IT-006 override and IT-016 identifier mismatch. The user asked to commit this plan; that commit records the plan, not completed code. Read/review the resulting artifact before beginning step 1. Follow the selected class test-first commit checkpoints during implementation.
+The original review called for checking expected facts against source messages and the five policy rules, especially IT-004/IT-020 conflicts, IT-008/IT-015 corrections, IT-006 override and IT-016 identifier mismatch, before beginning step 1. The plan and seven assignment steps are now committed with test-first checkpoints. Current results and acceptance are recorded in deliverables/verification.md and planning/validation.md.

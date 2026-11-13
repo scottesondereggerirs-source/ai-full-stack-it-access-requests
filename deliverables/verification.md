@@ -25,7 +25,7 @@ it-access accuracy --expected tests/expected/facts.json --actual deliverables/ac
 - T-42 uses downloaded hash-checked wheels with --no-index to install into a fresh virtual environment, then invokes the installed console command for intake, queue and export verification. A missing wheel cache is an explicit skip/unverified installation, never a passed install claim.
 - T-43 checks the validation index has one row for each of the 95 requirements. It does not certify capture, push, Classroom submission, or human acceptance.
 
-The canonical final full output is planning/test-run.txt. Per-step red/green logs preserve the test-first history. The final step-7 run and observed workload timings are recorded below after execution.
+The recorded assignment suite output is planning/test-run.txt. Per-step red/green logs preserve the test-first history. The completed step-7 run and observed workload timings are recorded below.
 
 ## Repairs and limitations
 
@@ -37,9 +37,9 @@ The supported hash lock is Linux x86_64 / CPython 3.12. Dependency wheels were d
 
 Committed current outputs cover 20 supplied messages; accuracy-input.jsonl separately retains the 21-message mock comparison including the paraphrase. The mock 252/252 scalar and 21/21 routing results demonstrate reproducible pipeline behavior. They do not measure live extraction performance, establish hallucination immunity, or replace human review. Manifest verification is required before consuming exported file pairs; a pair of file replacements is not one atomic operation.
 
-planning/validation.md is a candidate evidence index with Human review pending, not a machine-issued acceptance verdict. The reviewer must inspect and mark each requirement, verify Entire's session pairing with the final commit, push the reviewed default branch and submit only the repository root link. No push or Classroom submission is claimed here.
+planning/validation.md records all 95 requirements as met at the user’s direction after validation within the available methods and time. This acceptance decision does not extend the scope of the recorded checks. Before hand-in, commit the remaining reviewed changes, verify Entire’s session pairing with the final commit, push the reviewed default branch and submit only the repository root link. Final session pairing, push and Classroom submission are not confirmed here.
 
-## Observed final run
+## Observed assignment run
 
 Observed command: `env -u API_KEY python3 -m unittest discover -s tests -v`. All 53 tests passed with no skips; full output is planning/test-run.txt and the same run is retained as planning/step-07-green.txt. Total observed suite time was 38.776 seconds on this host. T-42 verified a fresh isolated offline installation and exercised its installed console script. These are local mock/test observations, not live-provider measurements.
 
@@ -50,4 +50,4 @@ WORKLOAD mock count=400 seconds=2.941 calls=400 max_in_flight=1
 WORKLOAD mock count=2000 seconds=13.980 calls=2000 max_in_flight=1
 ```
 
-The fast local fixture reads observed one simultaneous call in these bulk runs, within the two-call limit; the event-gated T-32 separately exercised both one- and two-worker concurrency. Every generated current hash/identity/route matched the source transformation, and unchanged reruns made no further calls. The 21-message supporting comparison scored mock scalar exact match 252/252, routing 21/21, source evidence 21/21 and required issues 21/21. Human validation and final submission/capture pairing remain pending.
+The fast local fixture reads observed one simultaneous call in these bulk runs, within the two-call limit; the event-gated T-32 separately exercised both one- and two-worker concurrency. Every generated current hash/identity/route matched the source transformation, and unchanged reruns made no further calls. The 21-message supporting comparison scored mock scalar exact match 252/252, routing 21/21, source evidence 21/21 and required issues 21/21. The user has accepted the validation results; final submission and capture pairing require confirmation during hand-in.
