@@ -1,0 +1,2 @@
+# Direct runtime dependency; the full hash-pinned installation lock is step 7.
+jsonschema==4.26.0
