@@ -1,0 +1,39 @@
+test_T_41_mock_workload (test_submission.SubmissionContract.test_T_41_mock_workload) ... FAIL
+test_T_42_readme_lockfile_handover (test_submission.SubmissionContract.test_T_42_readme_lockfile_handover) ... FAIL
+test_T_43_verification_evidence_index (test_submission.SubmissionContract.test_T_43_verification_evidence_index) ... ERROR
+
+======================================================================
+ERROR: test_T_43_verification_evidence_index (test_submission.SubmissionContract.test_T_43_verification_evidence_index)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_submission.py", line 108, in test_T_43_verification_evidence_index
+    validation=(ROOT/'planning/validation.md').read_text()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1029, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/user/ai-full-stack-it-access-requests/planning/validation.md'
+
+======================================================================
+FAIL: test_T_41_mock_workload (test_submission.SubmissionContract.test_T_41_mock_workload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_submission.py", line 50, in test_T_41_mock_workload
+    self.assertLess(len(json.dumps(datasets[2000][1])),2*len(json.dumps(datasets[400][1])))
+AssertionError: 180146 not less than 88290
+
+======================================================================
+FAIL: test_T_42_readme_lockfile_handover (test_submission.SubmissionContract.test_T_42_readme_lockfile_handover)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/ai-full-stack-it-access-requests/tests/test_submission.py", line 79, in test_T_42_readme_lockfile_handover
+    self.assertIn(term,readme)
+AssertionError: '--require-hashes' not found in '# AI Full Stack Challenge — IT Access Requests\n\nThe task is in CHALLENGE.md. Replace this file with your own README, as CHALLENGE.md asks.\n\nIn class, start with `docs/00-prerequisites.md` and follow the files in `docs/` in order.\n'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.956s
+
+FAILED (failures=2, errors=1)
