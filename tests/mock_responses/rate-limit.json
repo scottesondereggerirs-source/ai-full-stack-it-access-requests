@@ -1,0 +1,9 @@
+{
+  "response_source": "mock",
+  "mock_error": {
+    "category": "rate_limit",
+    "message": "Mock provider rate limit; retry after the indicated delay.",
+    "retry_after": 2
+  },
+  "note": "Saved exception stimulus, not a live service observation."
+}
