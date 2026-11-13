@@ -93,7 +93,7 @@ def capture_settings(config: ProviderConfig, mock_dir: Path, workers: int, inter
     settings["prompt_sha256"] = hashlib.sha256(settings["system_prompt"].encode("utf-8")).hexdigest()
     provider = provider_for(settings)
     if isinstance(provider, MockProvider):
-        settings["mock_fixture_hashes"] = provider.fixture_hashes()
+        settings["mock_fixture_hashes"] = provider.fixture_fingerprint()
     return settings, provider
 
 
@@ -179,7 +179,7 @@ def run_jobs(store: StateStore, jobs: list[ScheduledAttempt], *, providers=None)
             providers[key] = provider_for(settings)
         provider = providers[key]
         if isinstance(provider, MockProvider):
-            settings["mock_fixture_hashes"] = provider.fixture_hashes()
+            settings["mock_fixture_hashes"] = provider.fixture_fingerprint()
         settings.update(workers=workers, min_interval=interval)
         store.configure_attempt(job.attempt_id, settings)
         raw = store.source_bytes(job.attempt_id)

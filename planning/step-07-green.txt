@@ -1,0 +1,61 @@
+test_T_37_export_consistency (test_artifacts.ArtifactContract.test_T_37_export_consistency) ... ok
+test_T_38_interrupted_export (test_artifacts.ArtifactContract.test_T_38_interrupted_export) ... ok
+test_T_39_accuracy_scoring (test_artifacts.ArtifactContract.test_T_39_accuracy_scoring) ... ok
+test_T_40_mock_deliverable_generation (test_artifacts.ArtifactContract.test_T_40_mock_deliverable_generation) ... ok
+test_T_27_cli_intake_queue (test_cli.OperatorCliContract.test_T_27_cli_intake_queue) ... ok
+test_T_28_partial_progress (test_cli.OperatorCliContract.test_T_28_partial_progress) ... ok
+test_T_29_overlapping_operators (test_cli.OperatorCliContract.test_T_29_overlapping_operators) ... ok
+test_T_30_restart_resume (test_cli.OperatorCliContract.test_T_30_restart_resume) ... ok
+test_T_31_failure_isolation_retry (test_cli.OperatorCliContract.test_T_31_failure_isolation_retry) ... ok
+test_T_32_pacing_limits (test_cli.OperatorCliContract.test_T_32_pacing_limits) ... ok
+test_T_33_input_refresh_cli (test_cli.OperatorCliContract.test_T_33_input_refresh_cli) ... ok
+test_T_02_complete_request (test_extraction.ExtractionContract.test_T_02_complete_request) ... ok
+test_T_03_missing_dates (test_extraction.ExtractionContract.test_T_03_missing_dates) ... ok
+test_T_04_conflicting_details (test_extraction.ExtractionContract.test_T_04_conflicting_details) ... ok
+test_T_05_embedded_instructions (test_extraction.ExtractionContract.test_T_05_embedded_instructions) ... ok
+test_T_06_withdrawal (test_extraction.ExtractionContract.test_T_06_withdrawal) ... ok
+test_T_07_security_routes (test_extraction.ExtractionContract.test_T_07_security_routes) ... ok
+test_T_08_change_permission (test_extraction.ExtractionContract.test_T_08_change_permission) ... ok
+test_T_09_corrections (test_extraction.ExtractionContract.test_T_09_corrections) ... ok
+test_T_10_missing_facts (test_extraction.ExtractionContract.test_T_10_missing_facts) ... ok
+test_T_11_identifier_mismatch (test_extraction.ExtractionContract.test_T_11_identifier_mismatch) ... ok
+test_T_12_other_kind (test_extraction.ExtractionContract.test_T_12_other_kind) ... ok
+test_T_13_reversed_range (test_extraction.ExtractionContract.test_T_13_reversed_range) ... ok
+test_T_14_paraphrase_and_prompt_boundary (test_extraction.ExtractionContract.test_T_14_paraphrase_and_prompt_boundary) ... ok
+test_T_15_schema_date_matrix (test_extraction.ExtractionContract.test_T_15_schema_date_matrix) ... ok
+test_T_16_quote_evidence (test_extraction.ExtractionContract.test_T_16_quote_evidence) ... ok
+test_T_17_malformed_output (test_extraction.ExtractionContract.test_T_17_malformed_output) ... ok
+test_T_18_refusal (test_extraction.ExtractionContract.test_T_18_refusal) ... ok
+test_T_19_interrupted_response (test_extraction.ExtractionContract.test_T_19_interrupted_response) ... ok
+test_T_34_provider_request (test_live_provider.LiveProviderContract.test_T_34_provider_request) ... ok
+test_T_35_provider_response_errors (test_live_provider.LiveProviderContract.test_T_35_provider_response_errors) ... ok
+test_T_36_credential_redaction (test_live_provider.LiveProviderContract.test_T_36_credential_redaction) ... ok
+test_T_01_changed_source_does_not_reuse_the_old_fixture (test_mock_provider.MockProviderContract.test_T_01_changed_source_does_not_reuse_the_old_fixture) ... ok
+test_T_01_configuration_and_response_metadata_are_frozen (test_mock_provider.MockProviderContract.test_T_01_configuration_and_response_metadata_are_frozen) ... ok
+test_T_01_expected_facts_are_source_grounded (test_mock_provider.MockProviderContract.test_T_01_expected_facts_are_source_grounded)
+Check the independent oracle against original text, not mock replies. ... ok
+test_T_01_inconsistent_message_is_not_hidden_by_a_matching_source_hash (test_mock_provider.MockProviderContract.test_T_01_inconsistent_message_is_not_hidden_by_a_matching_source_hash) ... ok
+test_T_01_mock_provider_offline (test_mock_provider.MockProviderContract.test_T_01_mock_provider_offline) ... ok
+test_T_01_response_payloads_are_isolated_between_calls (test_mock_provider.MockProviderContract.test_T_01_response_payloads_are_isolated_between_calls) ... ok
+test_T_01_saved_fixture_manifest_is_complete (test_mock_provider.MockProviderContract.test_T_01_saved_fixture_manifest_is_complete) ... ok
+test_T_01_unknown_document_has_no_generic_success_fallback (test_mock_provider.MockProviderContract.test_T_01_unknown_document_has_no_generic_success_fallback) ... ok
+test_a_mock_reply_is_read_with_no_key_and_no_network (test_starter.MockResponse.test_a_mock_reply_is_read_with_no_key_and_no_network) ... ok
+test_each_request_export_has_message_text_and_a_hash (test_starter.SuppliedFiles.test_each_request_export_has_message_text_and_a_hash) ... ok
+test_the_schema_names_the_fields_it_requires (test_starter.SuppliedFiles.test_the_schema_names_the_fields_it_requires) ... ok
+test_T_20_identity_hash_history (test_state.DurableStateContract.test_T_20_identity_hash_history) ... ok
+test_T_21_unchanged_rerun (test_state.DurableStateContract.test_T_21_unchanged_rerun) ... ok
+test_T_22_changed_source (test_state.DurableStateContract.test_T_22_changed_source) ... ok
+test_T_23_incremental_batch (test_state.DurableStateContract.test_T_23_incremental_batch) ... ok
+test_T_24_settings_policy_refresh (test_state.DurableStateContract.test_T_24_settings_policy_refresh) ... ok
+test_T_25_failed_retry_after_success (test_state.DurableStateContract.test_T_25_failed_retry_after_success) ... ok
+test_T_26_metadata_is_not_facts (test_state.DurableStateContract.test_T_26_metadata_is_not_facts) ... ok
+test_T_41_mock_workload (test_submission.SubmissionContract.test_T_41_mock_workload) ... WORKLOAD mock count=400 seconds=2.941 calls=400 max_in_flight=1
+WORKLOAD mock count=2000 seconds=13.980 calls=2000 max_in_flight=1
+ok
+test_T_42_readme_lockfile_handover (test_submission.SubmissionContract.test_T_42_readme_lockfile_handover) ... ok
+test_T_43_verification_evidence_index (test_submission.SubmissionContract.test_T_43_verification_evidence_index) ... ok
+
+----------------------------------------------------------------------
+Ran 53 tests in 38.776s
+
+OK

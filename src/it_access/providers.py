@@ -104,6 +104,13 @@ class MockProvider:
             result[path.name] = hashlib.sha256(raw).hexdigest() if raw is not None else "unavailable"
         return result
 
+    def fixture_fingerprint(self) -> dict[str, str]:
+        """Constant-sized per-record provenance for the captured fixture bundle."""
+        if not hasattr(self, "_bundle_digest"):
+            encoded = json.dumps(self.fixture_hashes(), sort_keys=True, separators=(",", ":")).encode()
+            self._bundle_digest = hashlib.sha256(encoded).hexdigest()
+        return {"bundle_sha256": self._bundle_digest}
+
     def extract(
         self,
         *,

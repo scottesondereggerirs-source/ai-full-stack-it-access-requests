@@ -1,2 +1,2 @@
-# Direct runtime dependency; the full hash-pinned installation lock is step 7.
+# Direct runtime dependency; install the frozen environment using requirements.lock.
 jsonschema==4.26.0
