@@ -39,3 +39,11 @@ node tests/check_web.cjs http://127.0.0.1:8765 /tmp/request-lab-screenshots
 ```
 
 Stop the server with Ctrl+C. The script expects the unchanged supplied 20 messages and saved fixtures. The in-browser live test intentionally exercises a missing-key error, while W-03 independently verifies a successful live-shaped reply using an intercepted transport. Actual live extraction quality, remote hosting, and multiuser deployment remain outside this local demo verification.
+
+## Forwarding gateway correction
+
+The user's environment opens localhost through an HTTPS development gateway. GET requests loaded the page, but POST requests included the gateway Origin and were rejected by the localhost-only check before reaching either provider. `serve --browser-origin https://your-preview-gateway.example` now allows an explicitly configured browser origin and its Host alongside localhost. It does not trust arbitrary forwarding headers, allow wildcard origins, or bypass request-token validation. Invalid origin options fail before serving.
+
+[Gateway red run](web-gateway-red.txt) records the missing option before implementation. [Gateway green run](web-gateway-green.txt) includes W-09: actual HTTP parsing with allowed/default/foreign/null/mismatched origins, untrusted hosts, invalid tokens, CLI options, invalid configuration, and successful mock processing through a simulated forwarding gateway. [Gateway full regression](web-gateway-test-run.txt) records 62 passing tests.
+
+The running app was restarted with the exact gateway address supplied by the user. A localhost HTTP probe carrying that real HTTPS Origin and the page's token completed mock processing; foreign Origin and invalid-token probes both returned 403. No live model request was made for this check. The server remains running at the user's request. Reload the page after restarting to obtain its new request token.

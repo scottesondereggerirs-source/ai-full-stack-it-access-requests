@@ -47,6 +47,14 @@ Mock mode is the default: it uses saved provider replies without a model call. O
 
 Use `--input-dir path/to/exports` for a different directory (top-level JSON files). New messages need matching mock fixtures or live processing. `--model`, `--endpoint`, `--timeout` and `--mock-dir` configure the server; the browser chooses mock/live and processes one request at a time. The server binds to localhost for local use. It is not a hosted multiuser application. Read [web verification](planning/web-verification.md) for tests and browser checks.
 
+If your development environment opens the app through an HTTPS forwarding gateway, pass the exact browser origin when starting the server:
+
+```bash
+it-access --db state/web.sqlite3 serve --port 8765 --browser-origin https://your-preview-gateway.example
+```
+
+Use only the scheme and hostname (and port, if present), without a URL path. The explicit gateway origin is allowed alongside localhost; other origins remain rejected and processing still requires the page's request token. Refresh the browser after restarting the server.
+
 ## Live configuration
 
 The facilitator supplies `API_KEY` in the environment. Only live mode reads it; do not place it in a source file, database option or URL. No other environment variable is required. Model/provider settings are command options:

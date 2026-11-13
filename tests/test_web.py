@@ -160,3 +160,42 @@ class WebDemoContract(unittest.TestCase):
         status,payload=self.app.dispatch('GET','/api/config')
         self.assertEqual(status,200);self.assertEqual(payload['default_provider'],'mock')
         self.assertNotIn('API_KEY',json.dumps(payload))
+
+    def test_W_09_explicit_gateway_origin(self):
+        gateway='https://8765-demo.gw.example.test'
+        app=self.web.DemoApplication(self.inputs,self.db,MOCKS,browser_origin=gateway+'/')
+        self.addCleanup(app.close)
+        from it_access.cli import _parser
+        self.assertEqual(_parser().parse_args(['serve','--browser-origin',gateway]).browser_origin,gateway)
+        for invalid in ('null','*','https://example.test/path','https://user:pass@example.test','https://example.test?key=value','https://example.test#fragment','https://example.test:bad','https://example.test\n'):
+            with self.subTest(invalid=invalid),self.assertRaises(self.web.StateError):
+                self.web.DemoApplication(self.inputs,self.db,MOCKS,browser_origin=invalid)
+        class Connection:
+            def __init__(self, raw):self.input=io.BytesIO(raw);self.output=bytearray()
+            def makefile(self,*args):return self.input
+            def sendall(self,raw):self.output.extend(raw)
+        source=app.source('IT-001.json')
+        body=json.dumps(dict(document_id='IT-001.json',provider='mock',source_sha256=source['source_sha256'])).encode()
+        def post(origin,host='127.0.0.1:8765',token=None,application=app):
+            headers=f'POST /api/process HTTP/1.1\r\nHost: {host}\r\nOrigin: {origin}\r\nContent-Type: application/json\r\nX-CSRF-Token: {token or application.csrf_token}\r\nContent-Length: {len(body)}\r\n\r\n'
+            connection=Connection(headers.encode()+body)
+            self.web.RequestHandler(connection,('127.0.0.1',1234),SimpleNamespace(app=application,server_port=8765))
+            head,payload=bytes(connection.output).split(b'\r\n\r\n',1)
+            return int(head.split()[1]),json.loads(payload)
+        for origin,host,token,application in (
+            ('https://evil.example','127.0.0.1:8765',None,app),
+            ('null','127.0.0.1:8765',None,app),
+            (gateway+':443','127.0.0.1:8765',None,app),
+            (gateway,'evil.example',None,app),
+            (gateway,'127.0.0.1:8765','wrong-token',app),
+            (gateway,'127.0.0.1:8765',None,self.app),
+        ):
+            self.assertEqual(post(origin,host,token,application)[0],403)
+        self.assertFalse(self.db.exists())
+        status,job=post(gateway)
+        self.assertEqual(status,202)
+        deadline=time.monotonic()+5
+        while app.job(job['job_id'])['state']=='processing' and time.monotonic()<deadline:time.sleep(0.01)
+        self.assertEqual(app.job(job['job_id'])['result']['status'],'review')
+        self.assertTrue(self.web.is_local_request('8765-demo.gw.example.test',gateway,8765,gateway))
+        self.assertTrue(self.web.is_local_request('localhost:8765',None,8765,gateway))

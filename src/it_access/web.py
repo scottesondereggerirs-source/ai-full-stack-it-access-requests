@@ -24,13 +24,32 @@ class WebError(ValueError):
         super().__init__(message);self.status = status
 
 
-def is_local_request(host, origin, port):
+def validate_browser_origin(value):
+    if value is None:return None
+    try:
+        parsed = urlsplit(value)
+        if (any(char.isspace() for char in value) or parsed.scheme not in ("http","https")
+                or not parsed.hostname or parsed.username is not None or parsed.password is not None
+                or parsed.path not in ("","/") or parsed.query or parsed.fragment or "*" in value):
+            raise ValueError("invalid origin")
+        parsed.port
+    except ValueError as error:
+        raise StateError("Browser origin must be an HTTP(S) origin without credentials, a path, query or fragment.") from error
+    return parsed.scheme + "://" + parsed.netloc
+
+
+def is_local_request(host, origin, port, browser_origin=None):
     hosts = {f"127.0.0.1:{port}", f"localhost:{port}"}
-    return host in hosts and (origin is None or origin in {"http://" + item for item in hosts})
+    origins = {"http://" + item for item in hosts}
+    if browser_origin:
+        hosts.add(urlsplit(browser_origin).netloc)
+        origins.add(browser_origin)
+    return host in hosts and (origin is None or origin in origins)
 
 
 class DemoApplication:
-    def __init__(self, input_dir, database, mock_dir, config=None):
+    def __init__(self, input_dir, database, mock_dir, config=None, *, browser_origin=None):
+        self.browser_origin = validate_browser_origin(browser_origin)
         self.input_dir = Path(input_dir).resolve()
         if not self.input_dir.is_dir():raise StateError("The input directory does not exist.")
         self.database = Path(database).resolve()
@@ -174,7 +193,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         self._send(status,"application/json; charset=utf-8",json.dumps(payload,ensure_ascii=False).encode())
 
     def _local(self):
-        return is_local_request(self.headers.get("Host"),self.headers.get("Origin"),self.server.server_port)
+        return is_local_request(self.headers.get("Host"),self.headers.get("Origin"),self.server.server_port,self.server.app.browser_origin)
 
     def do_GET(self):
         if not self._local():self._json(403,{"error":"Use the local server address."});return
@@ -197,9 +216,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         self._json(*self.server.app.dispatch("POST",self.path,body,token=self.headers.get("X-CSRF-Token")))
 
 
-def serve(input_dir, database, mock_dir, *, config=None, port=8765):
+def serve(input_dir, database, mock_dir, *, config=None, port=8765, browser_origin=None):
     if not 0 <= port <= 65535:raise StateError("Web port must be between 0 and 65535.")
-    app = DemoApplication(input_dir,database,mock_dir,config)
+    app = DemoApplication(input_dir,database,mock_dir,config,browser_origin=browser_origin)
     server = ThreadingHTTPServer(("127.0.0.1",port),RequestHandler)
     server.daemon_threads = True;server.app = app
     print(f"Northstar Request Lab: http://127.0.0.1:{server.server_port}",flush=True)

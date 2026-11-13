@@ -37,6 +37,7 @@ def _parser():
         if name == "serve":
             command.add_argument("--port", type=int, default=8765)
             command.add_argument("--input-dir", type=Path, default=Path("materials/requests"))
+            command.add_argument("--browser-origin", help="Exact browser origin for a trusted forwarding gateway (for example https://preview.example).")
         if name == "intake":
             command.add_argument("input_directory", type=Path)
         if name == "refresh":
@@ -147,7 +148,7 @@ def main(argv=None):
     try:
         if args.command == "serve":
             from .web import serve
-            serve(args.input_dir,args.db,args.mock_dir,config=_validate_processing(args),port=args.port)
+            serve(args.input_dir,args.db,args.mock_dir,config=_validate_processing(args),port=args.port,browser_origin=args.browser_origin)
             return 0
         if args.command == "export":
             export_snapshot(args.db, args.output);print("Snapshot exported; run verify-export before use.");return 0
