@@ -67,6 +67,9 @@ class StartGate:
 def provider_for(settings: dict[str, Any]):
     if settings["provider"] == "mock":
         return MockProvider(Path(settings["mock_dir"]))
+    if settings["provider"] == "openai":
+        from .live_provider import OpenAIProvider
+        return OpenAIProvider()
     raise StateError("The live provider is not available in this build; use mock mode.")
 
 
@@ -139,6 +142,7 @@ def _process_one(document_id, raw, settings, provider, gate, database):
         config = ProviderConfig(
             provider=settings["provider"], model=settings["model"], endpoint=settings["endpoint"],
             timeout_seconds=settings["timeout_seconds"], **settings["generation"],
+            system_prompt=settings.get("system_prompt"), extraction_schema=settings.get("extraction_schema"),
         )
         gate.wait()
         response = provider.extract(document_id=document_id, source_sha256=source_hash, message=message, config=config)

@@ -30,6 +30,8 @@ class ProviderConfig:
     temperature: float = 0.0
     max_output_tokens: int = 3000
     store: bool = False
+    system_prompt: str | None = None
+    extraction_schema: dict[str, Any] | None = None
 
 
 @dataclass(frozen=True)
