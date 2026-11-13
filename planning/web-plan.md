@@ -1,0 +1,11 @@
+# Local request lab
+
+Add a local-only browser view around the implemented intake services. Preserve the original assignment artifacts and CLI. Serve with `it-access --db state/web.sqlite3 serve --port 8765`, bound to 127.0.0.1. Use standard-library HTTP plus packaged HTML/CSS/JavaScript; no new runtime dependency or hosting.
+
+The page selects a top-level JSON file from a configured input directory. Show decoded message/raw JSON on the left, and extracted facts, human-review route, issues and source evidence on the right. Mock is the default; optional live processing uses only server-side configuration/environment credentials. Clear stale output when selection/provider changes, show progress/errors, and let a supporting quote highlight its exact source text.
+
+Reuse capture_settings, WriterLock, StateStore and run_jobs. Start one background processing task per accepted request; return a task ID and poll for completion. Capture bytes/hash before dispatch; reject a client hash that no longer matches. Reuse unchanged successes and provide explicit retry after an error. Keep task metadata bounded. Do not use expected facts as runtime extraction data.
+
+HTTP contracts: GET /api/files lists filename/subject/channel; GET /api/source?document_id=... returns message, raw text/JSON and original byte hash; GET /api/config returns public configuration only; POST /api/process accepts document_id, provider, source_sha256 and retry; GET /api/jobs/ID returns processing/completed/error state and a public record. POST requires the page's CSRF token; reject nonlocal Host/Origin and non-JSON input. Serve only an explicit asset allowlist and input filenames inside the configured directory. Render source/provider strings as text.
+
+Write W-01–W-07 tests first, record the red run and commit; implement, run the full offline suite, then commit the implementation and green log. Tests cover file confinement, real mock routing/cache, intercepted live failure/retry and credential isolation, stale-input/token rejection, concurrent writer admission/readability, packaged assets/escaped rendering and CLI options. HTTP/controller tests use no live provider; visual/browser QA is recorded separately if available.
