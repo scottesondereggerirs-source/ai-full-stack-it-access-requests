@@ -1,0 +1,637 @@
+We need to develop a new project for a training class assignment. The assignment is outlined in CHALLENGE.md and the requirements are listed in docs/requirements.md. This project will need to have solid test plans. We can generate test data as needed to handle edge cases and validate against hallucination or other issues.
+
+---
+
+We need to develop a new project for a training class assignment. The assignment is outlined in CHALLENGE.md and the requirements are listed in docs/requirements.md. This project will need to have solid test plans. We can generate test data as needed to handle edge cases and validate against hallucination or other issues.
+
+---
+
+Implement the plan.
+
+---
+
+Implement the plan.
+
+---
+
+Can you also check against the other *.md files in docs. I'm having trouble understanding the assignment vs. understanding the process.
+
+---
+
+Can you also check against the other *.md files in docs. I'm having trouble understanding the assignment vs. understanding the process.
+
+---
+
+I like the copy tip you gave me, but can't seem to get it to work. Can you just write your last response into codex_summary.md ?
+
+---
+
+I like the copy tip you gave me, but can't seem to get it to work. Can you just write your last response into codex_summary.md ?
+
+---
+
+Weird. Can you delete codex_summary.md and re-create it? I don't see anythiung.
+
+---
+
+Weird. Can you delete codex_summary.md and re-create it? I don't see anythiung.
+
+---
+
+I see the file. but I don't see anything in it when i open it. Perhaps I should have specified to format it as a markdown file
+
+---
+
+I see the file. but I don't see anything in it when i open it. Perhaps I should have specified to format it as a markdown file
+
+---
+
+ok -- don't worry about that one, it was a side-quest. Back to the main goal. In your review, did you already look at office-polidy.md?
+
+---
+
+ok -- don't worry about that one, it was a side-quest. Back to the main goal. In your review, did you already look at office-polidy.md?
+
+---
+
+ok -- so the next thing is probably to get answers to the open questions, right?
+
+---
+
+ok -- so the next thing is probably to get answers to the open questions, right?
+
+---
+
+So for the open questions, I was instructed that we are creating an MVP, so we should probably find a way to encapsulate or stub out those questions and make default decisions for the simplest possible solution.
+
+---
+
+So for the open questions, I was instructed that we are creating an MVP, so we should probably find a way to encapsulate or stub out those questions and make default decisions for the simplest possible solution.
+
+---
+
+Can you double-check the tests and ,json files (ignore the "local-previous-work" folder) against our MVP and validate whether our MVP makes sense?
+
+---
+
+Can you double-check the tests and ,json files (ignore the "local-previous-work" folder) against our MVP and validate whether our MVP makes sense?
+
+---
+
+Great. I believe you already commited the plan and spec, but if not, we probably should.
+
+---
+
+Great. I believe you already commited the plan and spec, but if not, we probably should.
+
+---
+
+Can you go ahead and commit the plan.md? I removed codex_summary.md. I think something i did manually screwed it up. It was for my convenience, not a requirement.
+
+---
+
+Can you go ahead and commit the plan.md? I removed codex_summary.md. I think something i did manually screwed it up. It was for my convenience, not a requirement.
+
+---
+
+Do the test cases include test cases that will cause errors/rejection? Edge cases, etc.? Can you validate coverage on the test plan and test cases?
+
+---
+
+Do the test cases include test cases that will cause errors/rejection? Edge cases, etc.? Can you validate coverage on the test plan and test cases?
+
+---
+
+can you commit the plan revisions for us now, please?
+
+---
+
+can you commit the plan revisions for us now, please?
+
+---
+
+ok. I think it's time to implement the plan and build this system. Can you use the 03-implement-and-validate.md as the guide for our build? Do you have any questions before we start?
+
+---
+
+ok. I think it's time to implement the plan and build this system. Can you use the 03-implement-and-validate.md as the guide for our build? Do you have any questions before we start?
+
+---
+
+Can you execute the git commands?
+
+---
+
+Can you execute the git commands?
+
+---
+
+Excellent. Commit the mock provider changes and go through the next step of implementation.
+
+---
+
+Excellent. Commit the mock provider changes and go through the next step of implementation.
+
+---
+
+Great -- can you go ahead and run those commits?
+
+---
+
+Great -- can you go ahead and run those commits?
+
+---
+
+Pelase commit the step 2 implementation and passing log.
+
+---
+
+Pelase commit the step 2 implementation and passing log.
+
+---
+
+ok -- is there anything lest that we need to implement or validate?
+
+---
+
+ok -- is there anything lest that we need to implement or validate?
+
+---
+
+Please proceed with step 3
+
+---
+
+Please proceed with step 3
+
+---
+
+Go ahead and commit
+
+---
+
+Go ahead and commit
+
+---
+
+Execute the step 3 commit
+
+---
+
+Execute the step 3 commit
+
+---
+
+execute step 4, please.
+
+---
+
+execute step 4, please.
+
+---
+
+execute the commit statements
+
+---
+
+execute the commit statements
+
+---
+
+do the step 4 commit.
+
+---
+
+do the step 4 commit.
+
+---
+
+ok -- starting to run low on time. Let's run steps 5-7. we do need each commit.
+
+---
+
+ok -- starting to run low on time. Let's run steps 5-7. we do need each commit.
+
+---
+
+I think that probably satisfies what is needed for the assignment. However, I want to add something now. How difficult would it be to create a web application that would allow me to choose one of the json files and then be able to view the output of the process -- basically a visual that shows me the input and output side-by-side?
+
+---
+
+I think that probably satisfies what is needed for the assignment. However, I want to add something now. How difficult would it be to create a web application that would allow me to choose one of the json files and then be able to view the output of the process -- basically a visual that shows me the input and output side-by-side?
+
+---
+
+Perfect. Make it so, #1 :)
+
+---
+
+Perfect. Make it so, #1 :)
+
+---
+
+Can you launch it for me?
+
+---
+
+Can you launch it for me?
+
+---
+
+When I press "run live extraction" I get an error saying "Use the local server address."
+
+---
+
+When I press "run live extraction" I get an error saying "Use the local server address."
+
+---
+
+https://8765-cp-3c42f543fe0741458831d7c36c83d4c1.gw-us-east1-0.catalyte.ai/
+
+---
+
+https://8765-cp-3c42f543fe0741458831d7c36c83d4c1.gw-us-east1-0.catalyte.ai/
+
+---
+
+Mock is now working, but I'm getting "Set API_KEY in the environment for live extraction." when i choose OpenAI
+
+---
+
+Mock is now working, but I'm getting "Set API_KEY in the environment for live extraction." when i choose OpenAI
+
+---
+
+Does this answer the question? (.venv) user@cp-3c42f543fe0741458831d7c36c83d4c1:/tmp$ l request-lab-key.*
+0 -rw------- 1 user user 0 Nov 13 20:15 request-lab-key.0RfgJv
+0 -rw------- 1 user user 0 Nov 13 20:20 request-lab-key.h3f66y
+
+---
+
+Does this answer the question? (.venv) user@cp-3c42f543fe0741458831d7c36c83d4c1:/tmp$ l request-lab-key.*
+0 -rw------- 1 user user 0 Nov 13 20:15 request-lab-key.0RfgJv
+0 -rw------- 1 user user 0 Nov 13 20:20 request-lab-key.h3f66y
+
+---
+
+I'm not sure if I'll get an API KEY value. Let's go ahead and commit and push to main
+
+---
+
+I'm not sure if I'll get an API KEY value. Let's go ahead and commit and push to main
+
+---
+
+i think we got the access token resolved. Can you try again
+
+---
+
+i think we got the access token resolved. Can you try again
+
+---
+
+ok -- we need a pull request as well, correct?
+
+---
+
+ok -- we need a pull request as well, correct?
+
+---
+
+ok. Looks like I screwed up. I think adding the web interface messed things up. Here is a paset from the grading/feedback. I need to improve it quite a bit to pass.
+
+---
+
+ok. Looks like I screwed up. I think adding the web interface messed things up. Here is a paset from the grading/feedback. I need to improve it quite a bit to pass.
+
+---
+
+Feedback
+Your intake application handles the core extraction path well, with native structured output driving the results and facts grounded in the source messages. The main gap is how instructions reach the model, since the full schema text is also placed in the system prompt. Your session logs did not show you making the key model, schema and approval decisions yourself, though you did own scope and diagnosed problems before changing code.
+
+This challenge
+
+What you built
+35 of 36 met
+Structured output requests use the native strict schema path in your live provider module, and extracted facts trace back to the source messages. The gap sits in your extraction module, where the message builder copies the full schema text into the system prompt on top of the strict setting. Keep the task instructions in the prompt file alone.
+
+How you directed the work
+6 of 20 met
+You set the MVP scope boundary and added an acceptance condition for side-by-side inspection. You diagnosed the web origin error and the missing key setting before directing fixes. Your session logs did not show decisions on model choice, schema enforcement, uncertain source facts or the approval step.
+
+Course modules
+
+How large language models produce output
+1 of 1 met
+Output length limits are set in the provider configuration and carried through the request code and tests. That shows you considered generation bounds. This area is covered in your work.
+
+IRS policy on AI use and the approved tools
+0 of 2 met
+This submission did not show evidence for this module yet.
+
+Prompt engineering
+1 of 2 met
+Your extraction prompt relies on clear instructions and the schema without worked examples. The model returns strict structured JSON, which is a sound zero-shot approach for this task. The prompt design itself is in good shape.
+
+The working environment
+4 of 4 met
+You verified the repository clone before starting the work. Your commits marked each step of the build. You synchronized with the remote main line through pulls and pushes.
+
+The AI-assisted loop
+2 of 2 met
+You led the assistant through each step from task to reviewed commit. You audited test coverage for edge cases before accepting changes. Your pass-or-fail checks gate what ships.
+
+Team repository, version control and peer review
+2 of 2 met
+You kept your work on main and resolved a merge conflict in the README after a divergent pull. That covers the basics of working on a shared main line. Branching was not used, so this area can grow.
+
+AI-assisted Python
+2 of 3 met
+Your code uses conditionals and list operations fluently. You used an assistant to plan, generate and troubleshoot throughout. The evaluation only runs against deterministic mock responses, so it does not yet measure real gains against a baseline.
+
+Reading a generated change
+0 of 1 met
+This submission did not show evidence for this module yet.
+
+Test automation with AI
+1 of 1 met
+Your browser tests drive the pages through a real browser. They also check the responsive layouts. Test automation with AI is well covered in this submission.
+
+Reading a return as XML
+0 of 1 met
+This submission did not show evidence for this module yet.
+
+Reading return XML in tested Python
+0 of 1 met
+This submission did not show evidence for this module yet.
+
+Checkpoints
+Of the challenge’s 56 judged checkpoints, by category. Skipped checkpoints are left out.
+
+Met
+Not met
+No evidence
+Artifact
+What the submitted files show
+35 of 36 met
+Artifact: 35 met, 1 not met, 0 with no evidence
+Ownership
+How the work was directed, from the AI session logs
+6 of 20 met
+Ownership: 6 met, 0 not met, 14 with no evidence
+Related capabilities
+Cumulative program evidence at this report date, assessed separately from this challenge’s score.
+
+How LLMs work, the approved tools, and the AI-assisted loop
+12/15 checkpoints proven
+AI-assisted Python development and AI-driven test automation
+9/13 checkpoints proven
+Overview
+Northstar Labs is a fictional multinational company with around 5,000 employees. Build a runnable application that turns free-text access requests into structured records and a human review queue.
+
+Use the supplied JSON exports, extraction schema and office policy. Read docs/requirements.md for daily and peak workloads, regional operations, source updates and handover needs.
+
+Choose an interface suited to the IT team: a CLI, service or web application. Operators should be able to start intake, inspect completed results while other requests are pending, and resume unfinished work through the documented interface.
+
+The stakeholder
+IT Service Desk
+
+The IT team prepares complete requests for system owners and Security Review. The supplied policy defines routing, clarification and withdrawal handling.
+
+What it proves
+A pass shows you can build a runnable application that uses a language model to turn free-text IT access requests into source-grounded records and a policy-routed human review queue, keep it dependable under the stated workload and interruptions, and own the decisions an AI coding agent cannot make for you.
+
+Source-grounded structured records
+Policy-routed human review
+Dependable intake under shared operations
+Owned AI-assisted decisions
+Submission
+Opens
+Nov 12, 2026
+Due
+Nov 15, 2026
+Submitted
+Nov 13, 2026
+Attempts
+1
+scottesondereggerirs-source/ai-full-stack-it-access-requests at commit 7389a67
+No uploaded workspace is linked to this submission.
+Required layout
+README.md
+docs/
+  requirements.md
+src/
+tests/
+snapshot.schema.json
+deliverables/
+  extractions.jsonl
+  queue.json
+  accuracy.md
+  request-evidence.json
+  verification.md
+Deliverables
+Runnable application with pinned dependencies and documented commands
+Source-linked extraction records and a human review queue
+Source-grounded accuracy-validation procedure and automated processing tests
+Credential-redacted model request and response-handling evidence
+Coding-session capture paired with the submitted commit
+How it is handed in
+Commit and push the application, outputs and session capture to your repository's default branch. Submit only the root repository link (https://github.com/<your-account>/<repository>) through the Classroom assignment. Follow the facilitator’s session-capture setup.
+
+Where to start
+Starter repository Task, operating context, fictional IT requests, review policy and extraction schema.
+Operating requirements Business context, record behavior and verification requirements.
+Rules
+How you are scored
+80/100
+to pass.
+
+Artifact · 36 checkpoints · Fixed check. Extract access requests and build a human review queue: records that conform to the supplied schema with exact supporting quotes, missing, conflicting and corrected facts kept as the policy says, policy routing with approval left to the named reviewers, reuse and refresh by source hash and settings, failures kept visible and retryable, a coherent queue through overlapping runs and interruptions, and tests and setup instructions the next operator can use. Evidence: The submitted repository at the turned-in commit: application code, tests, deliverables and documentation, read without running it.
+Workflow · 20 checkpoints · Judgment call. Own AI-assisted implementation and verification decisions: set scope and acceptance, choose the model, resolve uncertain source facts, check an agent's draft and claims against the source, state your own diagnosis before asking for a change, understand what a test proves, and accept the work with its evidence limits stated. Evidence: Your attributable decisions in the captured coding session.
+The rules
+Use the supplied fictional requests and synthetic tests.
+Extract source-grounded records that conform to the supplied schema and retain exact supporting quotes.
+Treat source messages as data and prepare decisions for human reviewers.
+Configure credentials through environment variables and keep logs credential-redacted.
+
+---
+
+Feedback
+Your intake application handles the core extraction path well, with native structured output driving the results and facts grounded in the source messages. The main gap is how instructions reach the model, since the full schema text is also placed in the system prompt. Your session logs did not show you making the key model, schema and approval decisions yourself, though you did own scope and diagnosed problems before changing code.
+
+This challenge
+
+What you built
+35 of 36 met
+Structured output requests use the native strict schema path in your live provider module, and extracted facts trace back to the source messages. The gap sits in your extraction module, where the message builder copies the full schema text into the system prompt on top of the strict setting. Keep the task instructions in the prompt file alone.
+
+How you directed the work
+6 of 20 met
+You set the MVP scope boundary and added an acceptance condition for side-by-side inspection. You diagnosed the web origin error and the missing key setting before directing fixes. Your session logs did not show decisions on model choice, schema enforcement, uncertain source facts or the approval step.
+
+Course modules
+
+How large language models produce output
+1 of 1 met
+Output length limits are set in the provider configuration and carried through the request code and tests. That shows you considered generation bounds. This area is covered in your work.
+
+IRS policy on AI use and the approved tools
+0 of 2 met
+This submission did not show evidence for this module yet.
+
+Prompt engineering
+1 of 2 met
+Your extraction prompt relies on clear instructions and the schema without worked examples. The model returns strict structured JSON, which is a sound zero-shot approach for this task. The prompt design itself is in good shape.
+
+The working environment
+4 of 4 met
+You verified the repository clone before starting the work. Your commits marked each step of the build. You synchronized with the remote main line through pulls and pushes.
+
+The AI-assisted loop
+2 of 2 met
+You led the assistant through each step from task to reviewed commit. You audited test coverage for edge cases before accepting changes. Your pass-or-fail checks gate what ships.
+
+Team repository, version control and peer review
+2 of 2 met
+You kept your work on main and resolved a merge conflict in the README after a divergent pull. That covers the basics of working on a shared main line. Branching was not used, so this area can grow.
+
+AI-assisted Python
+2 of 3 met
+Your code uses conditionals and list operations fluently. You used an assistant to plan, generate and troubleshoot throughout. The evaluation only runs against deterministic mock responses, so it does not yet measure real gains against a baseline.
+
+Reading a generated change
+0 of 1 met
+This submission did not show evidence for this module yet.
+
+Test automation with AI
+1 of 1 met
+Your browser tests drive the pages through a real browser. They also check the responsive layouts. Test automation with AI is well covered in this submission.
+
+Reading a return as XML
+0 of 1 met
+This submission did not show evidence for this module yet.
+
+Reading return XML in tested Python
+0 of 1 met
+This submission did not show evidence for this module yet.
+
+Checkpoints
+Of the challenge’s 56 judged checkpoints, by category. Skipped checkpoints are left out.
+
+Met
+Not met
+No evidence
+Artifact
+What the submitted files show
+35 of 36 met
+Artifact: 35 met, 1 not met, 0 with no evidence
+Ownership
+How the work was directed, from the AI session logs
+6 of 20 met
+Ownership: 6 met, 0 not met, 14 with no evidence
+Related capabilities
+Cumulative program evidence at this report date, assessed separately from this challenge’s score.
+
+How LLMs work, the approved tools, and the AI-assisted loop
+12/15 checkpoints proven
+AI-assisted Python development and AI-driven test automation
+9/13 checkpoints proven
+Overview
+Northstar Labs is a fictional multinational company with around 5,000 employees. Build a runnable application that turns free-text access requests into structured records and a human review queue.
+
+Use the supplied JSON exports, extraction schema and office policy. Read docs/requirements.md for daily and peak workloads, regional operations, source updates and handover needs.
+
+Choose an interface suited to the IT team: a CLI, service or web application. Operators should be able to start intake, inspect completed results while other requests are pending, and resume unfinished work through the documented interface.
+
+The stakeholder
+IT Service Desk
+
+The IT team prepares complete requests for system owners and Security Review. The supplied policy defines routing, clarification and withdrawal handling.
+
+What it proves
+A pass shows you can build a runnable application that uses a language model to turn free-text IT access requests into source-grounded records and a policy-routed human review queue, keep it dependable under the stated workload and interruptions, and own the decisions an AI coding agent cannot make for you.
+
+Source-grounded structured records
+Policy-routed human review
+Dependable intake under shared operations
+Owned AI-assisted decisions
+Submission
+Opens
+Nov 12, 2026
+Due
+Nov 15, 2026
+Submitted
+Nov 13, 2026
+Attempts
+1
+scottesondereggerirs-source/ai-full-stack-it-access-requests at commit 7389a67
+No uploaded workspace is linked to this submission.
+Required layout
+README.md
+docs/
+  requirements.md
+src/
+tests/
+snapshot.schema.json
+deliverables/
+  extractions.jsonl
+  queue.json
+  accuracy.md
+  request-evidence.json
+  verification.md
+Deliverables
+Runnable application with pinned dependencies and documented commands
+Source-linked extraction records and a human review queue
+Source-grounded accuracy-validation procedure and automated processing tests
+Credential-redacted model request and response-handling evidence
+Coding-session capture paired with the submitted commit
+How it is handed in
+Commit and push the application, outputs and session capture to your repository's default branch. Submit only the root repository link (https://github.com/<your-account>/<repository>) through the Classroom assignment. Follow the facilitator’s session-capture setup.
+
+Where to start
+Starter repository Task, operating context, fictional IT requests, review policy and extraction schema.
+Operating requirements Business context, record behavior and verification requirements.
+Rules
+How you are scored
+80/100
+to pass.
+
+Artifact · 36 checkpoints · Fixed check. Extract access requests and build a human review queue: records that conform to the supplied schema with exact supporting quotes, missing, conflicting and corrected facts kept as the policy says, policy routing with approval left to the named reviewers, reuse and refresh by source hash and settings, failures kept visible and retryable, a coherent queue through overlapping runs and interruptions, and tests and setup instructions the next operator can use. Evidence: The submitted repository at the turned-in commit: application code, tests, deliverables and documentation, read without running it.
+Workflow · 20 checkpoints · Judgment call. Own AI-assisted implementation and verification decisions: set scope and acceptance, choose the model, resolve uncertain source facts, check an agent's draft and claims against the source, state your own diagnosis before asking for a change, understand what a test proves, and accept the work with its evidence limits stated. Evidence: Your attributable decisions in the captured coding session.
+The rules
+Use the supplied fictional requests and synthetic tests.
+Extract source-grounded records that conform to the supplied schema and retain exact supporting quotes.
+Treat source messages as data and prepare decisions for human reviewers.
+Configure credentials through environment variables and keep logs credential-redacted.
+
+---
+
+Explain to me a little more about the code issue and how we missed it. Is it a clarification from the grading response that helped identify it, or did we truly miss it in the requirements?
+
+---
+
+Explain to me a little more about the code issue and how we missed it. Is it a clarification from the grading response that helped identify it, or did we truly miss it in the requirements?
+
+---
+
+ok -- in the summary of "how I directed the work" -- it looked like it was probably summarizing the final commit, not all of the prior ones, I guess that's why i thought the web interface may have confused the issue.
+
+---
+
+ok -- in the summary of "how I directed the work" -- it looked like it was probably summarizing the final commit, not all of the prior ones, I guess that's why i thought the web interface may have confused the issue.
+
+---
+
+Are you able to verify the capture coverage?
+
+---
+
+Are you able to verify the capture coverage?
+
+---
+
+ok. Probably not anything we can do about that. Let's go back to our code issue. Please implement the code changes necessary to resolve the new bugs.
+
+---
+
+ok. Probably not anything we can do about that. Let's go back to our code issue. Please implement the code changes necessary to resolve the new bugs.
