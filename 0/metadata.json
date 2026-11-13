@@ -1,0 +1,73 @@
+{
+  "cli_version": "0.13.1",
+  "checkpoint_id": "01M7AW7A12VJJPDG12RWR458FA",
+  "session_id": "01a1d56e-cdba-7f30-9d65-83d1f0800166",
+  "strategy": "manual-commit",
+  "created_at": "2026-11-13T16:35:33.318464948Z",
+  "branch": "main",
+  "checkpoints_count": 4,
+  "save_step_count": 3,
+  "files_touched": [
+    "planning/step-01-red.txt",
+    "tests/expected/facts.json",
+    "tests/inputs/IT-101.json",
+    "tests/mock_responses/IT-001.json",
+    "tests/mock_responses/IT-002.json",
+    "tests/mock_responses/IT-003.json",
+    "tests/mock_responses/IT-004.json",
+    "tests/mock_responses/IT-005.json",
+    "tests/mock_responses/IT-006.json",
+    "tests/mock_responses/IT-007.json",
+    "tests/mock_responses/IT-008.json",
+    "tests/mock_responses/IT-009.json",
+    "tests/mock_responses/IT-010.json",
+    "tests/mock_responses/IT-011.json",
+    "tests/mock_responses/IT-012.json",
+    "tests/mock_responses/IT-013.json",
+    "tests/mock_responses/IT-014.json",
+    "tests/mock_responses/IT-015.json",
+    "tests/mock_responses/IT-016.json",
+    "tests/mock_responses/IT-017.json",
+    "tests/mock_responses/IT-018.json",
+    "tests/mock_responses/IT-019.json",
+    "tests/mock_responses/IT-020.json",
+    "tests/mock_responses/manifest.json",
+    "tests/mock_responses/paraphrase.json",
+    "tests/test_mock_provider.py"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6.1-sol",
+  "turn_id": "00cedef5b2be",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 13751,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 1981696,
+    "output_tokens": 11042,
+    "api_call_count": 12,
+    "subagent_tokens_complete": true
+  },
+  "redaction": {
+    "replacements": 4,
+    "layers": {
+      "betterleaks": 0,
+      "connection_string": 0,
+      "credential_key": 0,
+      "credential_value": 0,
+      "credentialed_uri": 0,
+      "entropy": 4,
+      "key_context": 0,
+      "pii": 0,
+      "provider_token": 0,
+      "shell_stdin": 0
+    },
+    "pii": {
+      "EMAIL": 0,
+      "IP": 0,
+      "PHONE": 0
+    }
+  },
+  "session_metrics": {
+    "turn_count": 30
+  }
+}
