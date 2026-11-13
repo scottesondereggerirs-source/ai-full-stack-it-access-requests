@@ -73,13 +73,13 @@
         "end_date": "2026-11-06",
         "manager": "Priya Shah"
       },
-      "status": "review",
-      "owner": "System Owner",
-      "next_action": "review-request",
+      "status": "needs-information",
+      "owner": "IT Service Desk",
+      "next_action": "clarify",
       "required_issue_codes": [
         "missing:request_date"
       ],
-      "basis": "Committed plan T-22/T-26: explicit source or metadata transformation of IT-001; expected facts selected before application output."
+      "basis": "Committed plan T-22/T-26: explicit source or metadata transformation of IT-001; expected facts selected before application output. Policy Review queue rule 3 requires clarify when request_date is missing; this corrects the original fixture routing typo before StateStore implementation."
     }
   ]
 }
